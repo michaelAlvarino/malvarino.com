@@ -1,0 +1,13 @@
+@import '../../node_modules/purecss-sass/vendor/assets/stylesheets/purecss.scss';
+
+$font-stack:    Helvetica, sans-serif;
+$body-margins: 20%;
+$text-color: #444444;
+$centered: center;
+
+body{
+	font-family: $font-stack;
+	margin-left: $body-margins;
+	margin-right: $body-margins;
+	color: $text-color;
+}
