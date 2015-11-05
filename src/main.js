@@ -15,12 +15,12 @@ class MyApp extends Component{
 	render(){
 		return(
 			<div>
-				<Header/>
 				<Resume/>
 			</div>
 		);
 	}
 }
+//				<Header/>
 
 render((
   <Router>
