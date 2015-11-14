@@ -15,7 +15,7 @@ class MyApp extends Component{
 	} // constructor()
 	render(){
 		return(
-			<div>
+			<div className="container">
 				<Resume/>
 			</div>
 		);

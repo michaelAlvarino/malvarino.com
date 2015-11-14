@@ -1,29 +1,18 @@
+//
+// import gulp deps
 import gulp from 'gulp';
 import browserify from 'browserify';
 import source from 'vinyl-source-stream';
 import babelify from 'babelify';
 import sass from 'gulp-sass';
 import image from 'gulp-image';
-import * as copy from 'gulp-copy';
+import gulpCopy from 'gulp-copy';
+import config from './gulp-config';
 
-const config = {
-	port: 3000,
-	devBaseUrl: 'http://localhost',
-	paths: {
-		html: './src/**/*.html',
-		dist: './dist',
-		mainJs: './src/main.js',
-		sassSrc: './src/**/*.scss',
-		js: './src/**/*.js',
-		img: './src/img/*',
-		ico: './src/img/*.ico'
-
-	}
-};
-
+// copy over favicon...
 gulp.task('ico', () => {
-	return gulp.src(config.paths.ico)
-	.pipe($.copy(config.paths.dist));
+	gulp.src(config.paths.ico)
+		.pipe(gulpCopy(config.paths.dist));
 });
 
 gulp.task('images', () => {
@@ -59,4 +48,4 @@ gulp.task('watch', () => {
 	gulp.watch(config.paths.img, ['images'])
 });
 
-gulp.task('default',['js', 'html', 'sass', 'images', 'watch']);
+gulp.task('default',['js', 'ico', 'html', 'sass', 'images', 'watch']);

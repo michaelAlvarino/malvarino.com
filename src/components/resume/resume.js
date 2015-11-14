@@ -14,18 +14,12 @@ export default class Resume extends Component{
 				<hr/>
 				<Education/>
 				<hr/>
-				<div className='pure-g'>
-					<div className='pure-u-lg-1-2'>
-						<div className='l-box'>
-							<Languages/>
-						</div>
-					</div>
-					<div className='pure-u-lg-1-2'>
-						<div className='l-box'>
-							<Frameworks/>
-						</div>
-					</div>
-    			</div>
+				<div className='col-s-12 col-md-6'>
+					<Languages/>
+				</div>
+				<div className='col-s-12 col-md-6'>
+					<Frameworks/>
+				</div>
     			<WorkExperience/>
     			<hr/>
     			<Hobbies/>

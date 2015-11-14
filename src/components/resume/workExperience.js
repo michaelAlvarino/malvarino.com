@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
 
 export default class WorkExperience extends Component{
+	constructor(props){
+		super(props);
+		this.state = {count: props.count};
+	}
+	click(){
+		this.setState({count: this.state.count + 1});
+	}
 	render(){
 		return(
 			<div>
+				<button onClick={this.click.bind(this)}>click me!</button>
+				<p>Clicks: {this.state.count}</p>
 			    <ul>
 			      	<li><h3>Informetric Systems - Software Application Engineer</h3></li>
 		        	<li>
@@ -52,3 +61,5 @@ export default class WorkExperience extends Component{
 		);
 	}
 }
+WorkExperience.propTypes = { count: React.PropTypes.number };
+WorkExperience.defaultProps = { count: 0 };
