@@ -5,7 +5,6 @@ import { Router, Route, Link } from 'react-router';
 
 // components
 import Resume from './components/resume/resume';
-// import Header from './components/header/header';
 import NoMatch from './components/noMatch';
 
 //

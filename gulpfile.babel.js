@@ -1,5 +1,4 @@
 import gulp from 'gulp';
-import nodemon from 'gulp-nodemon';
 import browserify from 'browserify';
 import source from 'vinyl-source-stream';
 import babelify from 'babelify';
