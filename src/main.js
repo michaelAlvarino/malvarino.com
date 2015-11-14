@@ -5,22 +5,24 @@ import { Router, Route, Link } from 'react-router';
 
 // components
 import Resume from './components/resume/resume';
-import Header from './components/header/header';
+// import Header from './components/header/header';
 import NoMatch from './components/noMatch';
 
+//
+// my app component 
 class MyApp extends Component{
 	constructor(){
 		super();
-	}
+	} // constructor()
 	render(){
 		return(
 			<div>
 				<Resume/>
 			</div>
 		);
-	}
+	} // renderer()
+
 }
-//				<Header/>
 
 render((
   <Router>
