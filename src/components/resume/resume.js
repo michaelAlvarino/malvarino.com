@@ -3,7 +3,7 @@ import Menu from './personalInfo';
 import Education from './education';
 import Languages from './languages/languages';
 import Frameworks from './frameworks/frameworks';
-import WorkExperience from './workExperience';
+import WorkExperience from './workExperience/workExperience';
 import Hobbies from './hobbies';
 
 export default class Resume extends Component{
@@ -14,11 +14,13 @@ export default class Resume extends Component{
 				<hr/>
 				<Education/>
 				<hr/>
-				<div className='col-s-12 col-md-6'>
-					<Languages/>
-				</div>
-				<div className='col-s-12 col-md-6'>
-					<Frameworks/>
+				<div className="container">
+					<div className='col-s-12 col-md-6'>
+						<Languages/>
+					</div>
+					<div className='col-s-12 col-md-6'>
+						<Frameworks/>
+					</div>
 				</div>
     			<WorkExperience/>
     			<hr/>
