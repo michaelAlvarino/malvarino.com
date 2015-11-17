@@ -6,7 +6,7 @@ import { Router, Route, Link } from 'react-router';
 // components
 import Resume from './components/resume/resume';
 import NoMatch from './components/noMatch';
-
+import RQMSClient from './components/rqms/rqmsClient';
 //
 // my app component 
 class MyApp extends Component{
@@ -25,8 +25,8 @@ class MyApp extends Component{
 
 render((
   <Router>
-    <Route path="/" component={ MyApp }>
-      <Route path="*" component={ NoMatch }/>
-    </Route>
+    <Route path="/" component={ MyApp }/>
+	<Route path="rqms" component={RQMSClient}/>
+	<Route path="*" component={ NoMatch }/>
   </Router>
 ), document.getElementById('app'));
