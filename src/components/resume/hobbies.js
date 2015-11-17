@@ -4,7 +4,7 @@ export default class Hobbies extends Component{
 	render(){
 		return(
 			<div>
-			    <h2>Hobbies</h2>
+			    <div className="page-header"><h1>Hobbies</h1></div>
 			    <ul>
 			      <li>Reading</li>
 			      <li>Rugby</li>

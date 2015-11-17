@@ -11,6 +11,9 @@ body{
 	margin-right: $body-margins;
 	color: $text-color;
 }
+#panel-title{
+	color: $text-color;
+}
 li{
 	list-style-type: none;
 }

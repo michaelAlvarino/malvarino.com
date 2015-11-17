@@ -1,5 +1,5 @@
 import React, { Component } from 'react'; 
-import Menu from './personalInfo';
+import Contact from './contact';
 import Education from './education';
 import Languages from './languages/languages';
 import Frameworks from './frameworks/frameworks';
@@ -10,10 +10,8 @@ export default class Resume extends Component{
 	render(){
 		return(
 			<div>
-				<Menu/>
-				<hr/>
+				<Contact/>
 				<Education/>
-				<hr/>
 				<div className="container">
 					<div className='col-s-12 col-md-6'>
 						<Languages/>
@@ -23,7 +21,6 @@ export default class Resume extends Component{
 					</div>
 				</div>
     			<WorkExperience/>
-    			<hr/>
     			<Hobbies/>
 			</div>
 		);

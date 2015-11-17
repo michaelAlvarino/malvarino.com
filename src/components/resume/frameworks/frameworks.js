@@ -6,7 +6,7 @@ export default class Frameworks extends Component{
 	render(){
 		return(
 			<div className="hidden-sm">
-			    <h2>Web Frameworks I'm Familiar With</h2>
+			    <div className="page-header"><h1>Frameworks I'm Familiar With</h1></div>
 			    <FrameworkList/>
 			</div>
 		);

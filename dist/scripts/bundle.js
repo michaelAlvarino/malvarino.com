@@ -23591,6 +23591,62 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var Contact = (function (_Component) {
+	_inherits(Contact, _Component);
+
+	function Contact() {
+		_classCallCheck(this, Contact);
+
+		_get(Object.getPrototypeOf(Contact.prototype), "constructor", this).apply(this, arguments);
+	}
+
+	_createClass(Contact, [{
+		key: "render",
+		value: function render() {
+			return _react2["default"].createElement(
+				"div",
+				{ className: "page-header" },
+				_react2["default"].createElement(
+					"h1",
+					null,
+					"Michael Alvarino ",
+					_react2["default"].createElement(
+						"small",
+						null,
+						"michael.alvarino@gmail.com"
+					)
+				)
+			);
+		}
+	}]);
+
+	return Contact;
+})(_react.Component);
+
+exports["default"] = Contact;
+module.exports = exports["default"];
+
+},{"react":206}],210:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
 var Education = (function (_Component) {
 	_inherits(Education, _Component);
 
@@ -23607,13 +23663,17 @@ var Education = (function (_Component) {
 				"div",
 				null,
 				_react2["default"].createElement(
-					"h2",
-					null,
-					"Education"
+					"div",
+					{ className: "page-header" },
+					_react2["default"].createElement(
+						"h1",
+						null,
+						"Education"
+					)
 				),
 				_react2["default"].createElement(
 					"table",
-					{ className: "pure-table" },
+					{ className: "table" },
 					_react2["default"].createElement(
 						"thead",
 						null,
@@ -23728,7 +23788,7 @@ var Education = (function (_Component) {
 exports["default"] = Education;
 module.exports = exports["default"];
 
-},{"react":206}],210:[function(require,module,exports){
+},{"react":206}],211:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -23809,7 +23869,7 @@ var FrameworkList = (function (_Component) {
 exports['default'] = FrameworkList;
 module.exports = exports['default'];
 
-},{"react":206}],211:[function(require,module,exports){
+},{"react":206}],212:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -23850,9 +23910,13 @@ var Frameworks = (function (_Component) {
 				'div',
 				{ className: 'hidden-sm' },
 				_react2['default'].createElement(
-					'h2',
-					null,
-					'Web Frameworks I\'m Familiar With'
+					'div',
+					{ className: 'page-header' },
+					_react2['default'].createElement(
+						'h1',
+						null,
+						'Frameworks I\'m Familiar With'
+					)
 				),
 				_react2['default'].createElement(_frameworkList2['default'], null)
 			);
@@ -23865,22 +23929,22 @@ var Frameworks = (function (_Component) {
 exports['default'] = Frameworks;
 module.exports = exports['default'];
 
-},{"./frameworkList":210,"react":206}],212:[function(require,module,exports){
-'use strict';
+},{"./frameworkList":211,"react":206}],213:[function(require,module,exports){
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _react = require('react');
 
@@ -23892,56 +23956,60 @@ var Hobbies = (function (_Component) {
 	function Hobbies() {
 		_classCallCheck(this, Hobbies);
 
-		_get(Object.getPrototypeOf(Hobbies.prototype), 'constructor', this).apply(this, arguments);
+		_get(Object.getPrototypeOf(Hobbies.prototype), "constructor", this).apply(this, arguments);
 	}
 
 	_createClass(Hobbies, [{
-		key: 'render',
+		key: "render",
 		value: function render() {
-			return _react2['default'].createElement(
-				'div',
+			return _react2["default"].createElement(
+				"div",
 				null,
-				_react2['default'].createElement(
-					'h2',
-					null,
-					'Hobbies'
+				_react2["default"].createElement(
+					"div",
+					{ className: "page-header" },
+					_react2["default"].createElement(
+						"h1",
+						null,
+						"Hobbies"
+					)
 				),
-				_react2['default'].createElement(
-					'ul',
+				_react2["default"].createElement(
+					"ul",
 					null,
-					_react2['default'].createElement(
-						'li',
+					_react2["default"].createElement(
+						"li",
 						null,
-						'Reading'
+						"Reading"
 					),
-					_react2['default'].createElement(
-						'li',
+					_react2["default"].createElement(
+						"li",
 						null,
-						'Rugby'
+						"Rugby"
 					),
-					_react2['default'].createElement(
-						'ul',
+					_react2["default"].createElement(
+						"ul",
 						null,
-						_react2['default'].createElement(
-							'li',
+						_react2["default"].createElement(
+							"li",
 							null,
-							'Bayonne Bombers'
+							"Bayonne Bombers"
 						),
-						_react2['default'].createElement(
-							'li',
+						_react2["default"].createElement(
+							"li",
 							null,
-							'Cornell Rugby Football Club'
+							"Cornell Rugby Football Club"
 						)
 					),
-					_react2['default'].createElement(
-						'li',
+					_react2["default"].createElement(
+						"li",
 						null,
-						'Snowboarding'
+						"Snowboarding"
 					),
-					_react2['default'].createElement(
-						'li',
+					_react2["default"].createElement(
+						"li",
 						null,
-						'Running and Exercising'
+						"Running and Exercising"
 					)
 				)
 			);
@@ -23951,10 +24019,10 @@ var Hobbies = (function (_Component) {
 	return Hobbies;
 })(_react.Component);
 
-exports['default'] = Hobbies;
-module.exports = exports['default'];
+exports["default"] = Hobbies;
+module.exports = exports["default"];
 
-},{"react":206}],213:[function(require,module,exports){
+},{"react":206}],214:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -24020,7 +24088,7 @@ var LanguageList = (function (_Component) {
 exports['default'] = LanguageList;
 module.exports = exports['default'];
 
-},{"react":206}],214:[function(require,module,exports){
+},{"react":206}],215:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -24061,9 +24129,13 @@ var Languages = (function (_Component) {
 				'div',
 				null,
 				_react2['default'].createElement(
-					'h2',
-					null,
-					'Programming Languages I\'ve Used'
+					'div',
+					{ className: 'page-header' },
+					_react2['default'].createElement(
+						'h1',
+						null,
+						'Languages I\'ve Used'
+					)
 				),
 				_react2['default'].createElement(_languageList2['default'], null)
 			);
@@ -24076,63 +24148,7 @@ var Languages = (function (_Component) {
 exports['default'] = Languages;
 module.exports = exports['default'];
 
-},{"./languageList":213,"react":206}],215:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var Menu = (function (_Component) {
-	_inherits(Menu, _Component);
-
-	function Menu() {
-		_classCallCheck(this, Menu);
-
-		_get(Object.getPrototypeOf(Menu.prototype), "constructor", this).apply(this, arguments);
-	}
-
-	_createClass(Menu, [{
-		key: "render",
-		value: function render() {
-			return _react2["default"].createElement(
-				"div",
-				{ className: "personal_info" },
-				_react2["default"].createElement(
-					"h1",
-					null,
-					"Michael Alvarino"
-				),
-				_react2["default"].createElement(
-					"h4",
-					null,
-					"michael.alvarino@gmail.com"
-				)
-			);
-		}
-	}]);
-
-	return Menu;
-})(_react.Component);
-
-exports["default"] = Menu;
-module.exports = exports["default"];
-
-},{"react":206}],216:[function(require,module,exports){
+},{"./languageList":214,"react":206}],216:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -24153,9 +24169,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _personalInfo = require('./personalInfo');
+var _contact = require('./contact');
 
-var _personalInfo2 = _interopRequireDefault(_personalInfo);
+var _contact2 = _interopRequireDefault(_contact);
 
 var _education = require('./education');
 
@@ -24192,10 +24208,8 @@ var Resume = (function (_Component) {
 			return _react2['default'].createElement(
 				'div',
 				null,
-				_react2['default'].createElement(_personalInfo2['default'], null),
-				_react2['default'].createElement('hr', null),
+				_react2['default'].createElement(_contact2['default'], null),
 				_react2['default'].createElement(_education2['default'], null),
-				_react2['default'].createElement('hr', null),
 				_react2['default'].createElement(
 					'div',
 					{ className: 'container' },
@@ -24211,7 +24225,6 @@ var Resume = (function (_Component) {
 					)
 				),
 				_react2['default'].createElement(_workExperienceWorkExperience2['default'], null),
-				_react2['default'].createElement('hr', null),
 				_react2['default'].createElement(_hobbies2['default'], null)
 			);
 		}
@@ -24223,92 +24236,26 @@ var Resume = (function (_Component) {
 exports['default'] = Resume;
 module.exports = exports['default'];
 
-},{"./education":209,"./frameworks/frameworks":211,"./hobbies":212,"./languages/languages":214,"./personalInfo":215,"./workExperience/workExperience":218,"react":206}],217:[function(require,module,exports){
-'use strict';
+},{"./contact":209,"./education":210,"./frameworks/frameworks":212,"./hobbies":213,"./languages/languages":215,"./workExperience/workExperience":217,"react":206}],217:[function(require,module,exports){
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
-
-var Experience = (function (_Component) {
-	_inherits(Experience, _Component);
-
-	function Experience(props) {
-		_classCallCheck(this, Experience);
-
-		_get(Object.getPrototypeOf(Experience.prototype), 'constructor', this).call(this, props);
-		this.state = { companyName: props.companyName,
-			experienceDesc: props.experienceDesc };
-	}
-
-	_createClass(Experience, [{
-		key: 'render',
-		value: function render() {
-			return _react2['default'].createElement(
-				'div',
-				null,
-				_react2['default'].createElement(
-					'p',
-					null,
-					'company name : ',
-					this.state.companyName,
-					' experience: ',
-					this.state.experienceDesc
-				)
-			);
-		}
-	}]);
-
-	return Experience;
-})(_react.Component);
-
-exports['default'] = Experience;
-
-Experience.propTypes = { companyName: _react2['default'].PropTypes.string,
-	experienceType: _react2['default'].PropTypes.string,
-	experienceDesc: _react2['default'].PropTypes.array };
-/* Experience.defaultProps = { companyName: "Error",
- 								experienceDesc: ["Error","Error"] };*/
-module.exports = exports['default'];
-
-},{"react":206}],218:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-	value: true
-});
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _experience = require('./experience');
-
-var _experience2 = _interopRequireDefault(_experience);
 
 var WorkExperience = (function (_Component) {
 	_inherits(WorkExperience, _Component);
@@ -24316,208 +24263,196 @@ var WorkExperience = (function (_Component) {
 	function WorkExperience(props) {
 		_classCallCheck(this, WorkExperience);
 
-		_get(Object.getPrototypeOf(WorkExperience.prototype), 'constructor', this).call(this, props);
+		_get(Object.getPrototypeOf(WorkExperience.prototype), "constructor", this).call(this, props);
+		this.state = { isiGlyphIconType: props.isiGlyphIconType };
 	}
 
 	_createClass(WorkExperience, [{
-		key: 'render',
+		key: "render",
 		value: function render() {
-			return _react2['default'].createElement(
-				'div',
-				{ className: 'panel-group', id: 'accordion', role: 'tablist', 'aria-multiselectable': 'true' },
-				_react2['default'].createElement(
-					'div',
-					{ className: 'panel panel-default' },
-					_react2['default'].createElement(
-						'div',
-						{ className: 'panel-heading', role: 'tab', id: 'headingOne' },
-						_react2['default'].createElement(
-							'h4',
-							{ className: 'panel-title' },
-							_react2['default'].createElement(
-								'a',
-								{ role: 'button', 'data-toggle': 'collapse', 'data-parent': '#accordion', href: '#collapseOne', 'aria-expanded': 'true', 'aria-controls': 'collapseOne' },
-								'Informetric Systems'
+			return _react2["default"].createElement(
+				"div",
+				null,
+				_react2["default"].createElement(
+					"div",
+					{ className: "page-header" },
+					_react2["default"].createElement(
+						"h1",
+						null,
+						"Work Experience"
+					)
+				),
+				_react2["default"].createElement(
+					"div",
+					{ className: "panel-group", id: "accordion", role: "tablist", "aria-multiselectable": "true" },
+					_react2["default"].createElement(
+						"div",
+						{ className: "panel panel-default" },
+						_react2["default"].createElement(
+							"a",
+							{ role: "button", "data-toggle": "collapse", "data-parent": "#accordion", href: "#collapseOne", "aria-expanded": "true", "aria-controls": "collapseOne" },
+							_react2["default"].createElement(
+								"div",
+								{ className: "panel-heading", role: "tab", id: "headingOne" },
+								_react2["default"].createElement(
+									"h4",
+									{ className: "container panel-title" },
+									"Informetric Systems"
+								)
 							)
-						)
-					),
-					_react2['default'].createElement(
-						'div',
-						{ id: 'collapseOne', className: 'panel-collapse collapse in', role: 'tabpanel', 'aria-labelledby': 'headingOne' },
-						_react2['default'].createElement(
-							'div',
-							{ className: 'panel-body' },
-							_react2['default'].createElement(
-								'ul',
-								null,
-								_react2['default'].createElement(
-									'li',
+						),
+						_react2["default"].createElement(
+							"div",
+							{ id: "collapseOne", className: "panel-collapse collapse", role: "tabpanel", "aria-labelledby": "headingOne" },
+							_react2["default"].createElement(
+								"div",
+								{ className: "panel-body" },
+								_react2["default"].createElement(
+									"ul",
 									null,
-									'Technical Experience'
-								),
-								_react2['default'].createElement(
-									'li',
-									null,
-									_react2['default'].createElement(
-										'ul',
+									_react2["default"].createElement(
+										"li",
 										null,
-										_react2['default'].createElement(
-											'li',
-											null,
-											'Created and maintained custom application installation kits for a strategic business partner'
-										),
-										_react2['default'].createElement(
-											'li',
-											null,
-											'Developed a database interfacing application using an internal framework that reduced the need for technical support and improved product consistency accross sites'
-										),
-										_react2['default'].createElement(
-											'li',
-											null,
-											'Helped design and develop a database interfacing application to process hundreds of gigabytes of image metadata'
-										),
-										_react2['default'].createElement(
-											'li',
-											null,
-											'Implemented application changes to the client application on as short notice as 5 days'
-										),
-										_react2['default'].createElement(
-											'li',
-											null,
-											'Refreshed product documentation for delivery to every customer and each new install'
-										)
-									)
-								),
-								_react2['default'].createElement(
-									'li',
-									null,
-									'Client Management'
-								),
-								_react2['default'].createElement(
-									'li',
-									null,
-									_react2['default'].createElement(
-										'ul',
+										"Created and maintained custom application installation kits for a strategic business partner"
+									),
+									_react2["default"].createElement(
+										"li",
 										null,
-										_react2['default'].createElement(
-											'li',
-											null,
-											'Responsible for technical support and technical communication accross five client sites'
-										),
-										_react2['default'].createElement(
-											'li',
-											null,
-											'Handled technical support 24x7 during pager duty'
-										),
-										_react2['default'].createElement(
-											'li',
-											null,
-											'Visited client sites as a technical resource and representative of Informetric'
-										)
+										"Developed a database interfacing application using an internal framework that reduced the need for technical support and improved product consistency accross sites"
+									),
+									_react2["default"].createElement(
+										"li",
+										null,
+										"Helped design and develop a database interfacing application to process hundreds of gigabytes of image metadata"
+									),
+									_react2["default"].createElement(
+										"li",
+										null,
+										"Implemented application changes to the client application on as short notice as 5 days"
+									),
+									_react2["default"].createElement(
+										"li",
+										null,
+										"Refreshed product documentation for delivery to every customer and each new install"
+									),
+									_react2["default"].createElement(
+										"li",
+										null,
+										"Responsible for technical support and technical communication accross five client sites"
+									),
+									_react2["default"].createElement(
+										"li",
+										null,
+										"Handled technical support 24x7 during pager duty"
+									),
+									_react2["default"].createElement(
+										"li",
+										null,
+										"Visited client sites as a technical resource and representative of Informetric"
 									)
 								)
 							)
 						)
-					)
-				),
-				_react2['default'].createElement(
-					'div',
-					{ className: 'panel panel-default' },
-					_react2['default'].createElement(
-						'div',
-						{ className: 'panel-heading', role: 'tab', id: 'headingTwo' },
-						_react2['default'].createElement(
-							'a',
-							{ className: 'collapsed', role: 'button', 'data-toggle': 'collapse', 'data-parent': '#accordion', href: '#collapseTwo', 'aria-expanded': 'false', 'aria-controls': 'collapseTwo' },
-							_react2['default'].createElement(
-								'h4',
-								{ className: 'panel-title' },
-								'Campus Evolution Villages'
-							)
-						)
 					),
-					_react2['default'].createElement(
-						'div',
-						{ id: 'collapseTwo', className: 'panel-collapse collapse', role: 'tabpanel', 'aria-labelledby': 'headingTwo' },
-						_react2['default'].createElement(
-							'div',
-							{ className: 'panel-body' },
-							_react2['default'].createElement(
-								'ul',
-								null,
-								_react2['default'].createElement(
-									'li',
+					_react2["default"].createElement(
+						"div",
+						{ className: "panel panel-default" },
+						_react2["default"].createElement(
+							"a",
+							{ className: "collapsed", role: "button", "data-toggle": "collapse", "data-parent": "#accordion", href: "#collapseTwo", "aria-expanded": "false", "aria-controls": "collapseTwo" },
+							_react2["default"].createElement(
+								"div",
+								{ className: "panel-heading", role: "tab", id: "headingTwo" },
+								_react2["default"].createElement(
+									"h4",
+									{ className: "container panel-title" },
+									"Campus Evolution Villages"
+								)
+							)
+						),
+						_react2["default"].createElement(
+							"div",
+							{ id: "collapseTwo", className: "panel-collapse collapse", role: "tabpanel", "aria-labelledby": "headingTwo" },
+							_react2["default"].createElement(
+								"div",
+								{ className: "panel-body" },
+								_react2["default"].createElement(
+									"ul",
 									null,
-									'Evaluated businesses for investment potential'
-								),
-								_react2['default'].createElement(
-									'li',
-									null,
-									'Advised portfolio companies in how to best allocate their time and employees'
-								),
-								_react2['default'].createElement(
-									'li',
-									null,
-									'Compiled a database of 150 entrepreneurship program contacts at universities accross the US '
+									_react2["default"].createElement(
+										"li",
+										null,
+										"Evaluated businesses for investment potential"
+									),
+									_react2["default"].createElement(
+										"li",
+										null,
+										"Advised portfolio companies in how to best allocate their time and employees"
+									),
+									_react2["default"].createElement(
+										"li",
+										null,
+										"Compiled a database of 150 entrepreneurship program contacts at universities accross the US "
+									)
 								)
 							)
 						)
-					)
-				),
-				_react2['default'].createElement(
-					'div',
-					{ className: 'panel panel-default' },
-					_react2['default'].createElement(
-						'div',
-						{ className: 'panel-heading', role: 'tab', id: 'headingThree' },
-						_react2['default'].createElement(
-							'a',
-							{ className: 'collapsed', role: 'button', 'data-toggle': 'collapse', 'data-parent': '#accordion', href: '#collapseThree', 'aria-expanded': 'false', 'aria-controls': 'collapseThree' },
-							_react2['default'].createElement(
-								'h4',
-								{ className: 'panel-title' },
-								'La Buena Onda'
-							)
-						)
 					),
-					_react2['default'].createElement(
-						'div',
-						{ id: 'collapseThree', className: 'panel-collapse collapse', role: 'tabpanel', 'aria-labelledby': 'headingThree' },
-						_react2['default'].createElement(
-							'div',
-							{ className: 'panel-body' },
-							_react2['default'].createElement(
-								'ul',
-								null,
-								_react2['default'].createElement(
-									'li',
+					_react2["default"].createElement(
+						"div",
+						{ className: "panel panel-default" },
+						_react2["default"].createElement(
+							"a",
+							{ className: "collapsed", role: "button", "data-toggle": "collapse", "data-parent": "#accordion", href: "#collapseThree", "aria-expanded": "false", "aria-controls": "collapseThree" },
+							_react2["default"].createElement(
+								"div",
+								{ className: "panel-heading", role: "tab", id: "headingThree" },
+								_react2["default"].createElement(
+									"h4",
+									{ className: "container panel-title" },
+									"La Buena Onda"
+								)
+							)
+						),
+						_react2["default"].createElement(
+							"div",
+							{ id: "collapseThree", className: "panel-collapse collapse", role: "tabpanel", "aria-labelledby": "headingThree" },
+							_react2["default"].createElement(
+								"div",
+								{ className: "panel-body" },
+								_react2["default"].createElement(
+									"ul",
 									null,
-									'Created an accounting projection to 10 years showing the time until break even on investment'
-								),
-								_react2['default'].createElement(
-									'li',
-									null,
-									'Performed a cost analysis that showed kitchen employees were not stealing food as suspected'
-								),
-								_react2['default'].createElement(
-									'li',
-									null,
-									'Created a new website using free online tools'
-								),
-								_react2['default'].createElement(
-									'li',
-									null,
-									'Implemented a new point of service system to better manage revenues and costs'
-								),
-								_react2['default'].createElement(
-									'li',
-									null,
-									'Learned about Nicaraguan culture by meeting locals and travelers, and volunteering to help teach at a local school'
-								),
-								_react2['default'].createElement(
-									'li',
-									null,
-									'Perfected Spanish business skills'
+									_react2["default"].createElement(
+										"li",
+										null,
+										"Created an accounting projection to 10 years showing the time until break even on investment"
+									),
+									_react2["default"].createElement(
+										"li",
+										null,
+										"Performed a cost analysis that showed kitchen employees were not stealing food as suspected"
+									),
+									_react2["default"].createElement(
+										"li",
+										null,
+										"Created a new website using free online tools"
+									),
+									_react2["default"].createElement(
+										"li",
+										null,
+										"Implemented a new point of service system to better manage revenues and costs"
+									),
+									_react2["default"].createElement(
+										"li",
+										null,
+										"Learned about Nicaraguan culture by meeting locals and travelers, and volunteering to help teach at a local school"
+									),
+									_react2["default"].createElement(
+										"li",
+										null,
+										"Perfected Spanish business skills"
+									)
 								)
 							)
 						)
@@ -24530,10 +24465,13 @@ var WorkExperience = (function (_Component) {
 	return WorkExperience;
 })(_react.Component);
 
-exports['default'] = WorkExperience;
-module.exports = exports['default'];
+exports["default"] = WorkExperience;
 
-},{"./experience":217,"react":206}],219:[function(require,module,exports){
+WorkExperience.propTypes = { isiGlyphIconType: _react2["default"].PropTypes.string };
+WorkExperience.defaultProps = { isiGlyphIconType: "glyphicon glyphicon-chevron-down" };
+module.exports = exports["default"];
+
+},{"react":206}],218:[function(require,module,exports){
 // react stuff
 'use strict';
 
@@ -24607,4 +24545,4 @@ var MyApp = (function (_Component) {
 	)
 ), document.getElementById('app'));
 
-},{"./components/noMatch":208,"./components/resume/resume":216,"react":206,"react-dom":26,"react-router":46}]},{},[219]);
+},{"./components/noMatch":208,"./components/resume/resume":216,"react":206,"react-dom":26,"react-router":46}]},{},[218]);

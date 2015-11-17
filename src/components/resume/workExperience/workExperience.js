@@ -1,53 +1,43 @@
-import React, { Component } from 'react';
-
+import React, { Component, PropTypes } from 'react';
 export default class WorkExperience extends Component{
 	constructor(props){
 		super(props);
+    	this.state = {isiGlyphIconType: props.isiGlyphIconType};		
 	}
 	render(){
 		return(
-			<div className="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-				<div className="panel panel-default">
-					<div className="panel-heading" role="tab" id="headingOne">
-							<h4 className="panel-title">
+			<div >
+				<div className="page-header"><h1>Work Experience</h1></div>
+				<div className="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+					<div className="panel panel-default">
 						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-								Informetric Systems
+							<div className="panel-heading" role="tab" id="headingOne">
+									<h4 className="container panel-title">Informetric Systems</h4>
+							</div>
 						</a>
-							</h4>
-					</div>
-				<div id="collapseOne" className="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-					<div className="panel-body">
-						<ul>
-							<li >Technical Experience</li>
-							<li>
-								<ul>
-									<li>Created and maintained custom application installation kits for a strategic business partner</li>
-									<li>Developed a database interfacing application using an internal framework that reduced the need for technical support and improved product consistency accross sites</li>
-									<li>Helped design and develop a database interfacing application to process hundreds of gigabytes of image metadata</li>
-									<li>Implemented application changes to the client application on as short notice as 5 days</li>
-									<li>Refreshed product documentation for delivery to every customer and each new install</li>
-								</ul>
-							</li>
-							<li>Client Management</li>
-							<li>
-								<ul>
-									<li>Responsible for technical support and technical communication accross five client sites</li>
-									<li>Handled technical support 24x7 during pager duty</li>
-									<li>Visited client sites as a technical resource and representative of Informetric</li>
-								</ul>
-							</li>
-						</ul>
+					<div id="collapseOne" className="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+						<div className="panel-body">
+							<ul>
+								<li>Created and maintained custom application installation kits for a strategic business partner</li>
+								<li>Developed a database interfacing application using an internal framework that reduced the need for technical support and improved product consistency accross sites</li>
+								<li>Helped design and develop a database interfacing application to process hundreds of gigabytes of image metadata</li>
+								<li>Implemented application changes to the client application on as short notice as 5 days</li>
+								<li>Refreshed product documentation for delivery to every customer and each new install</li>
+								<li>Responsible for technical support and technical communication accross five client sites</li>
+								<li>Handled technical support 24x7 during pager duty</li>
+								<li>Visited client sites as a technical resource and representative of Informetric</li>								
+							</ul>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div className="panel panel-default">
-				<div className="panel-heading" role="tab" id="headingTwo">
+				<div className="panel panel-default">
 					<a className="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-						<h4 className="panel-title">
-							Campus Evolution Villages
-						</h4>
+						<div className="panel-heading" role="tab" id="headingTwo">
+								<h4 className="container panel-title">
+									Campus Evolution Villages
+								</h4>
+						</div>
 					</a>
-				</div>
 					<div id="collapseTwo" className="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 						<div className="panel-body">
 							<ul>
@@ -58,14 +48,14 @@ export default class WorkExperience extends Component{
 						</div>
 					</div>
 				</div>
-			<div className="panel panel-default">
-				<div className="panel-heading" role="tab" id="headingThree">
+				<div className="panel panel-default">
 					<a className="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-						<h4 className="panel-title">
-							La Buena Onda
-						</h4>
+						<div className="panel-heading" role="tab" id="headingThree">
+							<h4 className="container panel-title">
+								La Buena Onda
+							</h4>
+						</div>
 					</a>
-				</div>
 					<div id="collapseThree" className="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 						<div className="panel-body">
 							<ul>
@@ -80,6 +70,9 @@ export default class WorkExperience extends Component{
 					</div>
 				</div>
 			</div>
+			</div>
 		);
 	}
 }
+WorkExperience.propTypes = { isiGlyphIconType: React.PropTypes.string };
+WorkExperience.defaultProps = { isiGlyphIconType: "glyphicon glyphicon-chevron-down" };

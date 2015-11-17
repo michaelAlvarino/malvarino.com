@@ -4,5 +4,8 @@ body {
   margin-right: 20%;
   color: #444444; }
 
+#panel-title {
+  color: #444444; }
+
 li {
   list-style-type: none; }

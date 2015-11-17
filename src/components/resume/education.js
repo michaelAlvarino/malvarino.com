@@ -5,8 +5,8 @@ export default class Education extends Component{
 	render(){
 		return(	
 			<div>
-				<h2>Education</h2>
-			    <table className="pure-table" >
+				<div className="page-header"><h1>Education</h1></div>
+			    <table className="table" >
 			      <thead>
 			        <tr>
 			          <th>University</th>
