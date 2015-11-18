@@ -6,7 +6,7 @@ const config = {
 	paths: {
 		html: './src/**/*.html',
 		dist: './dist',
-		mainJs: './src/main.js',
+		mainJs: './src/router.js',
 		sassSrc: './src/**/*.scss',
 		js: './src/**/*.js',
 		img: './src/img/*',
