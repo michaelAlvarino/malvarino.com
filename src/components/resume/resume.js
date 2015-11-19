@@ -9,7 +9,7 @@ import Hobbies from './hobbies';
 export default class Resume extends Component{
 	render(){
 		return(
-			<div>
+			<div className="container">
 				<Contact/>
 				<Education/>
 				<div className="container">

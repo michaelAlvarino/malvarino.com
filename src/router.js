@@ -7,13 +7,15 @@ import createBrowserHistory from 'history/lib/createBrowserHistory'
 // components
 import Resume from './components/resume/resume';
 import NoMatch from './components/noMatch';
-import RQMSClient from './components/rqms/rqmsClient';
+import DraggableGraph from './components/rqms/draggableGraph';
+import Graph from './components/rqms/Graph';
 
 render((
   <Router history={createBrowserHistory()}>
     <Route path="/" component={ Resume }/>
     <Route path="about-me" component={ Resume } />
-	<Route path="rqms" component={RQMSClient}/>
+	<Route path="rqms" component={DraggableGraph}/>
+	<Route path="graph" component={Graph}/>
 	<Route path="*" component={ NoMatch }/>
   </Router>
 ), document.getElementById('app'));
