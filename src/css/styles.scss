@@ -24,12 +24,6 @@ li{
 .no-cursor {
   cursor: auto;
 }
-// .cursor-y {
-//   cursor: ns-resize;
-// }
-// .cursor-x {
-//   cursor: ew-resize;
-// }
 .react-draggable strong {
   background: #ddd;
   border: 1px solid #999;
@@ -44,9 +38,12 @@ li{
   background: #fff;
   border: 1px solid #999;
   border-radius: 3px;
-  width: 180px;
-  height: 180px;
-  margin: 10px;
+  margin: auto;
   padding: 10px;
   float: left;
+}
+.handle{
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #999;
 }
