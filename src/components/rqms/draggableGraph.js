@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import Draggable from 'react-draggable';
 import Graph from './graph';
+import MaNavbar from '../shared/maNavbar'
 
 export default class DraggableGraph extends Component{
     constructor(props){
@@ -9,7 +10,9 @@ export default class DraggableGraph extends Component{
     }
 	render(){
 		return(
-			<Draggable
+      <div className="container">
+        <MaNavbar/>
+			   <Draggable
                 handle=".handle"
                 axis="both"
                 start={{x: 0, y: 0}}
@@ -21,6 +24,7 @@ export default class DraggableGraph extends Component{
                     <Graph Data={this.state.Data}/>
                 </div>
             </Draggable>	
+        </div>
         );
 	}
 }

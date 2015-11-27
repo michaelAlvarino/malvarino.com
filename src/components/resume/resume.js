@@ -5,11 +5,13 @@ import Languages from './languages/languages';
 import Frameworks from './frameworks/frameworks';
 import WorkExperience from './workExperience/workExperience';
 import Hobbies from './hobbies';
+import MaNavbar from '../shared/maNavbar'
 
 export default class Resume extends Component{
 	render(){
 		return(
 			<div className="container">
+				<MaNavbar/>
 				<Contact/>
 				<Education/>
 				<div className="container">

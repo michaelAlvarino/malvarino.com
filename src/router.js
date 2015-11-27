@@ -8,12 +8,13 @@ import createBrowserHistory from 'history/lib/createBrowserHistory'
 import Resume from './components/resume/resume';
 import NoMatch from './components/noMatch';
 import DraggableGraph from './components/rqms/draggableGraph';
+import Home from './components/home/home';
 
 render((
   <Router history={createBrowserHistory()}>
-    <Route path="/" component={ Resume }/>
-    <Route path="about-me" component={ Resume } />
-	<Route path="rqms" component={DraggableGraph}/>
+    <Route path="/" component={ Home }/>
+    <Route path="About-Me" component={ Resume } />
+	<Route path="DraggableGraph" component={ DraggableGraph }/>
 	<Route path="*" component={ NoMatch }/>
   </Router>
 ), document.getElementById('app'));
