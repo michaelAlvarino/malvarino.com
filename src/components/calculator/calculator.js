@@ -21,7 +21,7 @@ export default class Calculator extends Component{
 						</div>
 						<div>
 							<input type="form-control"></input>
-							<button>click</button>
+							<button>Calculate!</button>
 						</div>
 					</div>
 				</Draggable>

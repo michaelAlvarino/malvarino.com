@@ -25150,7 +25150,7 @@ var Calculator = (function (_Component) {
 							_react2['default'].createElement(
 								'button',
 								null,
-								'click'
+								'Calculate!'
 							)
 						)
 					)
