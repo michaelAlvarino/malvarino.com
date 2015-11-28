@@ -62,8 +62,9 @@ export default class Calculator extends Component{
 							// 
 							// This is where we'll start in the Flux cycle
 							// Add onClick={this.calculate} here
-							// this.calculate should be a function that passes the <input> 
-							// string to the ActionCreator (CalcActions)
+							// this.calculate should be a function that invokes an  
+							// ActionCreator (CalcActions). Think
+							// calculate: () => { CalcActions.Calculate(this.state.input) }
 							//
 							// Go to calcActions.js for Step 2
 							<button>Calculate!</button>
