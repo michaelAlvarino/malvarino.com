@@ -1,0 +1,18 @@
+
+.calculator{
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 3px;
+  margin: auto;
+  padding-bottom: 10px;
+  float: left;  
+  width: 300px;
+  height: 380px;
+}
+
+.calculatorHandle{
+  height: 30px;
+  text-align: left;
+  border: 1px solid #999;
+}

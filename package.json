@@ -22,6 +22,7 @@
     "babelify": "^6.3.0",
     "browserify": "^11.2.0",
     "gulp": "^3.9.0",
+    "gulp-bundle-assets": "^2.23.0",
     "gulp-copy": "0.0.2",
     "gulp-image": "^1.1.1",
     "gulp-sass": "^2.0.4",

@@ -2,7 +2,19 @@ $font-stack:    Helvetica, sans-serif;
 $body-margins: 20%;
 $text-color: #444444;
 $centered: center;
+/* 
+* shared amongst react draggable things...
+*/
+.react-draggable, .cursor {
+  cursor: move;
+}
+.no-cursor {
+  cursor: auto;
+}
 
+/*
+* generic stuff
+*/
 body{
 	font-family: $font-stack;
 	margin-left: $body-margins;
@@ -15,35 +27,5 @@ body{
 li{
 	list-style-type: none;
 }
-.layout-item{
-	background-color: gray;
-}
-.react-draggable, .cursor {
-  cursor: move;
-}
-.no-cursor {
-  cursor: auto;
-}
-.react-draggable strong {
-  background: #ddd;
-  border: 1px solid #999;
-  border-radius: 3px;
-  display: block;
-  margin-bottom: 10px;
-  padding: 3px 5px;
-  text-align: center;
-}
-.colormesilly {
-  box-sizing: border-box;
-  background: #fff;
-  border: 1px solid #999;
-  border-radius: 3px;
-  margin: auto;
-  padding: 10px;
-  float: left;
-}
-.handle{
-  text-align: center;
-  padding: 10px;
-  border: 1px solid #999;
-}
+@import 'calculator';
+@import 'draggableGraph';

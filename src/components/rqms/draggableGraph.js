@@ -19,7 +19,7 @@ export default class DraggableGraph extends Component{
                 moveOnStartChange={false}
                 grid={[25, 25]}
                 zIndex={100}>
-                <div className="colormesilly">
+                <div className="draggableGraph">
                     <div className="handle">Drag Me</div>
                     <Graph Data={this.state.Data}/>
                 </div>

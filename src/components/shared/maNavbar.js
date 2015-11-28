@@ -11,6 +11,7 @@ export default class MaNavbar extends Component{
 						<li role="presentation"><Link to="/About-Me"><p>About Me</p></Link></li>
 						<li role="presentation"><a href="http://imbadatcleverurls.blogspot.com/"><p>My Blog!</p></a></li>
 						<li role="presentation"><Link to="/DraggableGraph"><p>Draggable Graph</p></Link></li>
+						<li role="presentation"><Link to="/Calculator"><p>Calculator</p></Link></li>
 					</ul>
 				</div>
 			</nav>

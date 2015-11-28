@@ -25096,6 +25096,96 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouter = require('react-router');
+
+var _reactDraggable = require('react-draggable');
+
+var _reactDraggable2 = _interopRequireDefault(_reactDraggable);
+
+var _sharedMaNavbar = require('../shared/maNavbar');
+
+var _sharedMaNavbar2 = _interopRequireDefault(_sharedMaNavbar);
+
+var Calculator = (function (_Component) {
+	_inherits(Calculator, _Component);
+
+	function Calculator() {
+		_classCallCheck(this, Calculator);
+
+		_get(Object.getPrototypeOf(Calculator.prototype), 'constructor', this).apply(this, arguments);
+	}
+
+	_createClass(Calculator, [{
+		key: 'render',
+		value: function render() {
+			return _react2['default'].createElement(
+				'div',
+				{ className: 'container' },
+				_react2['default'].createElement(_sharedMaNavbar2['default'], null),
+				_react2['default'].createElement(
+					_reactDraggable2['default'],
+					{
+						handle: '.calculatorHandle',
+						axis: 'both',
+						start: { x: 0, y: 0 },
+						moveOnStartChange: false,
+						grid: [25, 25],
+						zIndex: 100 },
+					_react2['default'].createElement(
+						'div',
+						{ className: 'calculator' },
+						_react2['default'].createElement(
+							'div',
+							null,
+							_react2['default'].createElement(
+								'p',
+								{ className: 'calculatorHandle' },
+								'Calculator'
+							)
+						),
+						_react2['default'].createElement(
+							'div',
+							null,
+							_react2['default'].createElement('input', { type: 'form-control' }),
+							_react2['default'].createElement(
+								'button',
+								null,
+								'click'
+							)
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return Calculator;
+})(_react.Component);
+
+exports['default'] = Calculator;
+module.exports = exports['default'];
+
+},{"../shared/maNavbar":224,"react":208,"react-draggable":28,"react-router":48}],211:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+	value: true
+});
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
 var _sharedMaNavbar = require('../shared/maNavbar');
 
 var _sharedMaNavbar2 = _interopRequireDefault(_sharedMaNavbar);
@@ -25135,7 +25225,7 @@ var Home = (function (_Component) {
 exports['default'] = Home;
 module.exports = exports['default'];
 
-},{"../shared/maNavbar":223,"react":208}],211:[function(require,module,exports){
+},{"../shared/maNavbar":224,"react":208}],212:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -25182,7 +25272,7 @@ var NoMatch = (function (_Component) {
 exports['default'] = NoMatch;
 module.exports = exports['default'];
 
-},{"react":208}],212:[function(require,module,exports){
+},{"react":208}],213:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25238,7 +25328,7 @@ var Contact = (function (_Component) {
 exports["default"] = Contact;
 module.exports = exports["default"];
 
-},{"react":208}],213:[function(require,module,exports){
+},{"react":208}],214:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25400,7 +25490,7 @@ var Education = (function (_Component) {
 exports["default"] = Education;
 module.exports = exports["default"];
 
-},{"react":208}],214:[function(require,module,exports){
+},{"react":208}],215:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -25481,7 +25571,7 @@ var FrameworkList = (function (_Component) {
 exports['default'] = FrameworkList;
 module.exports = exports['default'];
 
-},{"react":208}],215:[function(require,module,exports){
+},{"react":208}],216:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -25541,7 +25631,7 @@ var Frameworks = (function (_Component) {
 exports['default'] = Frameworks;
 module.exports = exports['default'];
 
-},{"./frameworkList":214,"react":208}],216:[function(require,module,exports){
+},{"./frameworkList":215,"react":208}],217:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25625,7 +25715,7 @@ var Hobbies = (function (_Component) {
 exports["default"] = Hobbies;
 module.exports = exports["default"];
 
-},{"react":208}],217:[function(require,module,exports){
+},{"react":208}],218:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -25691,7 +25781,7 @@ var LanguageList = (function (_Component) {
 exports['default'] = LanguageList;
 module.exports = exports['default'];
 
-},{"react":208}],218:[function(require,module,exports){
+},{"react":208}],219:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -25751,7 +25841,7 @@ var Languages = (function (_Component) {
 exports['default'] = Languages;
 module.exports = exports['default'];
 
-},{"./languageList":217,"react":208}],219:[function(require,module,exports){
+},{"./languageList":218,"react":208}],220:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -25844,7 +25934,7 @@ var Resume = (function (_Component) {
 exports['default'] = Resume;
 module.exports = exports['default'];
 
-},{"../shared/maNavbar":223,"./contact":212,"./education":213,"./frameworks/frameworks":215,"./hobbies":216,"./languages/languages":218,"./workExperience/workExperience":220,"react":208}],220:[function(require,module,exports){
+},{"../shared/maNavbar":224,"./contact":213,"./education":214,"./frameworks/frameworks":216,"./hobbies":217,"./languages/languages":219,"./workExperience/workExperience":221,"react":208}],221:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26079,7 +26169,7 @@ WorkExperience.propTypes = { isiGlyphIconType: _react2["default"].PropTypes.stri
 WorkExperience.defaultProps = { isiGlyphIconType: "glyphicon glyphicon-chevron-down" };
 module.exports = exports["default"];
 
-},{"react":208}],221:[function(require,module,exports){
+},{"react":208}],222:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -26140,7 +26230,7 @@ var DraggableGraph = (function (_Component) {
                         zIndex: 100 },
                     _react2['default'].createElement(
                         'div',
-                        { className: 'colormesilly' },
+                        { className: 'draggableGraph' },
                         _react2['default'].createElement(
                             'div',
                             { className: 'handle' },
@@ -26165,7 +26255,7 @@ DraggableGraph.defaultProps = { Data: [{
     }] };
 module.exports = exports['default'];
 
-},{"../shared/maNavbar":223,"./graph":222,"react":208,"react-draggable":28}],222:[function(require,module,exports){
+},{"../shared/maNavbar":224,"./graph":223,"react":208,"react-draggable":28}],223:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -26234,7 +26324,7 @@ Graph.propTypes = {
 };
 module.exports = exports['default'];
 
-},{"react":208}],223:[function(require,module,exports){
+},{"react":208}],224:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -26329,6 +26419,19 @@ var MaNavbar = (function (_Component) {
 									'Draggable Graph'
 								)
 							)
+						),
+						_react2['default'].createElement(
+							'li',
+							{ role: 'presentation' },
+							_react2['default'].createElement(
+								_reactRouter.Link,
+								{ to: '/Calculator' },
+								_react2['default'].createElement(
+									'p',
+									null,
+									'Calculator'
+								)
+							)
 						)
 					)
 				)
@@ -26342,7 +26445,7 @@ var MaNavbar = (function (_Component) {
 exports['default'] = MaNavbar;
 module.exports = exports['default'];
 
-},{"react":208,"react-router":48}],224:[function(require,module,exports){
+},{"react":208,"react-router":48}],225:[function(require,module,exports){
 // react stuff
 'use strict';
 
@@ -26380,13 +26483,18 @@ var _componentsHomeHome = require('./components/home/home');
 
 var _componentsHomeHome2 = _interopRequireDefault(_componentsHomeHome);
 
+var _componentsCalculatorCalculator = require('./components/calculator/calculator');
+
+var _componentsCalculatorCalculator2 = _interopRequireDefault(_componentsCalculatorCalculator);
+
 (0, _reactDom.render)(_react2['default'].createElement(
   _reactRouter.Router,
   { history: (0, _historyLibCreateBrowserHistory2['default'])() },
   _react2['default'].createElement(_reactRouter.Route, { path: '/', component: _componentsHomeHome2['default'] }),
   _react2['default'].createElement(_reactRouter.Route, { path: 'About-Me', component: _componentsResumeResume2['default'] }),
   _react2['default'].createElement(_reactRouter.Route, { path: 'DraggableGraph', component: _componentsRqmsDraggableGraph2['default'] }),
+  _react2['default'].createElement(_reactRouter.Route, { path: 'Calculator', component: _componentsCalculatorCalculator2['default'] }),
   _react2['default'].createElement(_reactRouter.Route, { path: '*', component: _componentsNoMatch2['default'] })
 ), document.getElementById('app'));
 
-},{"./components/home/home":210,"./components/noMatch":211,"./components/resume/resume":219,"./components/rqms/draggableGraph":221,"history/lib/createBrowserHistory":7,"react":208,"react-dom":27,"react-router":48}]},{},[224]);
+},{"./components/calculator/calculator":210,"./components/home/home":211,"./components/noMatch":212,"./components/resume/resume":220,"./components/rqms/draggableGraph":222,"history/lib/createBrowserHistory":7,"react":208,"react-dom":27,"react-router":48}]},{},[225]);

@@ -1,3 +1,15 @@
+/* 
+* shared amongst react draggable things...
+*/
+.react-draggable, .cursor {
+  cursor: move; }
+
+.no-cursor {
+  cursor: auto; }
+
+/*
+* generic stuff
+*/
 body {
   font-family: Helvetica, sans-serif;
   margin-left: 20%;
@@ -10,15 +22,26 @@ body {
 li {
   list-style-type: none; }
 
-.layout-item {
-  background-color: gray; }
+.calculator {
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 3px;
+  margin: auto;
+  padding-bottom: 10px;
+  float: left;
+  width: 300px;
+  height: 380px; }
 
-.react-draggable, .cursor {
-  cursor: move; }
+.calculatorHandle {
+  height: 30px;
+  text-align: left;
+  border: 1px solid #999; }
 
-.no-cursor {
-  cursor: auto; }
-
+/* not sure where i'm using layout-item?...
+.layout-item{
+	background-color: gray;
+}*/
 .react-draggable strong {
   background: #ddd;
   border: 1px solid #999;
@@ -28,7 +51,7 @@ li {
   padding: 3px 5px;
   text-align: center; }
 
-.colormesilly {
+.draggableGraph {
   box-sizing: border-box;
   background: #fff;
   border: 1px solid #999;
