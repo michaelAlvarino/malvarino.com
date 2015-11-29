@@ -2,11 +2,21 @@ import React, {Component, PropTypes} from 'react'
 import {Router, Route, Link} from 'react-router'
 import Draggable from 'react-draggable'
 import MaNavbar from '../shared/maNavbar'
+import CalcActions from '../../actions/calcActions'
+
+/*
+* import store
+*/
+import Store from '../../store/store'
 
 export default class Calculator extends Component{
+	handleClick(e){
+		console.log(e);
+		CalcActions.Calculate(e);
+	}
 	render(){
 		return(
-			<div className="container">
+			<div>
 				<MaNavbar/>
 				<Draggable
 					handle=".calculatorHandle"
@@ -20,8 +30,8 @@ export default class Calculator extends Component{
 							<p className="calculatorHandle">Calculator</p>
 						</div>
 						<div>
-							<input type="form-control"></input>
-							<button>Calculate!</button>
+							<input type="text"></input>
+							<input type="submit" value="Calculate!" onClick={this.handleClick.bind(this)}></input>
 						</div>
 					</div>
 				</Draggable>

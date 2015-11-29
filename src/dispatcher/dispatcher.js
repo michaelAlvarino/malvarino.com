@@ -1,11 +1,14 @@
+/*
+* Import fb flux dispatcher
+*/
 import { Dispatcher } from 'flux';
-const gestapo = new Dispatcher();
 
-const CONSTANTS = {
-	CALCULATE: "CALCULATE"
-}
+/*
+* create a new dispatcher
+*/
+const Dispatcho = new Dispatcher();
 
-gestapo.dispatch({
-	type: CONSTANTS.CALCULATE,
-	string: string
-})
+/*
+* export the dispatcher
+*/
+export default Dispatcho;
