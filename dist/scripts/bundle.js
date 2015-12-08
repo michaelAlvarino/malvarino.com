@@ -25761,13 +25761,27 @@ var _storeStore2 = _interopRequireDefault(_storeStore);
 var Calculator = (function (_Component) {
 	_inherits(Calculator, _Component);
 
-	function Calculator() {
+	function Calculator(props) {
 		_classCallCheck(this, Calculator);
 
-		_get(Object.getPrototypeOf(Calculator.prototype), 'constructor', this).apply(this, arguments);
+		_get(Object.getPrototypeOf(Calculator.prototype), 'constructor', this).call(this, props);
+		this.state = _storeStore2['default'].getData();
+		console.log(this.state);
+		this.onChange = this.onChange.bind(this);
 	}
 
 	_createClass(Calculator, [{
+		key: 'onChange',
+		value: function onChange() {
+			// console.log(Store.getData());
+			this.setState(_storeStore2['default'].getData());
+		}
+	}, {
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			_storeStore2['default'].addChangeListener(this.onChange);
+		}
+	}, {
 		key: 'handleClick',
 		value: function handleClick(e) {
 			console.log(e);
@@ -25804,7 +25818,7 @@ var Calculator = (function (_Component) {
 						_react2['default'].createElement(
 							'div',
 							null,
-							_react2['default'].createElement('input', { type: 'text' }),
+							_react2['default'].createElement('input', { type: 'text', value: this.state["calculator"] }),
 							_react2['default'].createElement('input', { type: 'submit', value: 'Calculate!', onClick: this.handleClick.bind(this) })
 						)
 					)
@@ -27194,7 +27208,15 @@ Object.defineProperty(exports, '__esModule', {
 	value: true
 });
 
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _dispatcherDispatcher = require('../dispatcher/dispatcher');
 
@@ -27202,27 +27224,66 @@ var _dispatcherDispatcher2 = _interopRequireDefault(_dispatcherDispatcher);
 
 var _events = require('events');
 
+var _events2 = _interopRequireDefault(_events);
+
 var _constantsConstants = require('../constants/constants');
 
 var _constantsConstants2 = _interopRequireDefault(_constantsConstants);
 
 var CHANGE_EVENT = "change";
 
-var Store = {
-	data: [],
-	timesTwo: function timesTwo(inpu) {
-		return inpu * 2;
-	}
-};
+// var data = {
+// 	calculator: null
+// };
 
-_dispatcherDispatcher2['default'].register(function (payload) {
+var StoreCls = (function (_EventEmitter) {
+	_inherits(StoreCls, _EventEmitter);
+
+	function StoreCls() {
+		_classCallCheck(this, StoreCls);
+
+		_get(Object.getPrototypeOf(StoreCls.prototype), 'constructor', this).call(this);
+		this.data = {
+			calculator: null
+		};
+	}
+
+	_createClass(StoreCls, [{
+		key: 'getData',
+		value: function getData() {
+			return this.data;
+		}
+	}, {
+		key: 'emitChange',
+		value: function emitChange() {
+			this.emit(CHANGE_EVENT);
+		}
+	}, {
+		key: 'addChangeListener',
+		value: function addChangeListener(callback) {
+			this.on(CHANGE_EVENT, callback);
+		}
+	}, {
+		key: 'removeChangeListener',
+		value: function removeChangeListener(callback) {
+			this.removeListener(CHANGE_EVENT, callback);
+		}
+	}]);
+
+	return StoreCls;
+})(_events2['default']);
+
+var Store = new StoreCls();
+
+Store.dispatchToken = _dispatcherDispatcher2['default'].register(function (payload) {
 	console.log(payload);
 	switch (payload.actionType) {
 		case _constantsConstants2['default'].CALCULATE:
-			console.log("switch/case");
-			var calc = payload.item.target.previousElementSibling.value;
-			console.log(calc.toString());
-			console.log(Store.timesTwo(calc));
+			console.log("Matched case: " + _constantsConstants2['default'].CALCULATE);
+			var calc = Number(payload.item.target.previousElementSibling.value);
+			Store.data["calculator"] = calc * 2;
+			console.log(Store.data["calculator"]);
+			Store.emitChange();
 			break;
 
 		default:

@@ -1,24 +1,51 @@
 import Dispatcho from '../dispatcher/dispatcher'
-import {EventEmitter} from 'events'
+import EventEmitter from 'events'
 import Constants from '../constants/constants'
 
 const CHANGE_EVENT = "change";
 
-var Store = {
-	data: [],
-	timesTwo: (inpu) => {
-		return inpu*2;
-	}
-};
+// var data = {
+// 	calculator: null
+// };
 
-Dispatcho.register((payload) => {
+
+class StoreCls extends EventEmitter {
+
+	constructor() {
+		super();
+		this.data = {
+			calculator: null
+		};
+	}
+	
+	getData(){
+		return this.data;
+	}
+
+	emitChange() {
+		this.emit(CHANGE_EVENT);
+	}
+
+	addChangeListener(callback) {
+		this.on(CHANGE_EVENT, callback);
+	}
+
+	removeChangeListener(callback) {
+		this.removeListener(CHANGE_EVENT, callback);
+	}
+}
+
+const Store = new StoreCls();
+
+Store.dispatchToken = Dispatcho.register((payload) => {
 	console.log(payload);
 	switch(payload.actionType){
 		case Constants.CALCULATE:
-			console.log("switch/case");
-			let calc = payload.item.target.previousElementSibling.value;
-			console.log(calc.toString());
-			console.log(Store.timesTwo(calc));
+			console.log("Matched case: " + Constants.CALCULATE);
+			let calc = Number(payload.item.target.previousElementSibling.value);
+			Store.data["calculator"] = calc * 2;
+			console.log(Store.data["calculator"]);
+			Store.emitChange();
 			break;
 
 		default:

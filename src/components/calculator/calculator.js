@@ -10,6 +10,19 @@ import CalcActions from '../../actions/calcActions'
 import Store from '../../store/store'
 
 export default class Calculator extends Component{
+	constructor(props){
+		super(props);
+		this.state = Store.getData();
+		console.log(this.state);
+		this.onChange = this.onChange.bind(this);
+	}
+	onChange(){
+		// console.log(Store.getData());
+		this.setState(Store.getData());
+	}
+	componentDidMount(){
+		Store.addChangeListener(this.onChange);
+	}
 	handleClick(e){
 		console.log(e);
 		CalcActions.Calculate(e);
@@ -30,7 +43,7 @@ export default class Calculator extends Component{
 							<p className="calculatorHandle">Calculator</p>
 						</div>
 						<div>
-							<input type="text"></input>
+							<input type="text" value={this.state["calculator"]}></input>
 							<input type="submit" value="Calculate!" onClick={this.handleClick.bind(this)}></input>
 						</div>
 					</div>
