@@ -13,19 +13,22 @@ export default class Calculator extends Component{
 	constructor(props){
 		super(props);
 		this.state = Store.getData();
-		console.log(this.state);
-		this.onChange = this.onChange.bind(this);
+		this.handleChange = this.handleChange.bind(this);
 	}
-	onChange(){
-		// console.log(Store.getData());
-		this.setState(Store.getData());
+	handleChange(event) {
+		// only handle the change if it exists
+		// without this conditional, handlechange is called when handleSubmit changes
+		// the value attribute of our input field. this could normally be resolved by
+		// displaying the result somewhere other than the input field...
+		if(!!event){this.setState({calculator: event.target.value})};
 	}
 	componentDidMount(){
-		Store.addChangeListener(this.onChange);
+		Store.addChangeListener(this.handleChange);
 	}
-	handleClick(e){
-		console.log(e);
-		CalcActions.Calculate(e);
+	handleSubmit(event){
+		event.preventDefault();
+		CalcActions.Calculate(event.target["0"].value);
+		this.setState(Store.getData());
 	}
 	render(){
 		return(
@@ -42,10 +45,15 @@ export default class Calculator extends Component{
 						<div>
 							<p className="calculatorHandle">Calculator</p>
 						</div>
-						<div>
-							<input type="text" value={this.state["calculator"]}></input>
-							<input type="submit" value="Calculate!" onClick={this.handleClick.bind(this)}></input>
-						</div>
+						<form className="navbar-form navbar-left" onSubmit={this.handleSubmit.bind(this)} role="search">
+							<div className="form-group">
+								<input type="text"
+                   					onChange={this.handleChange.bind(this)}
+                   					value={this.state.calculator}
+                   					className="form-control" placeholder="Search"></input>
+							</div>
+							<button type="submit" className="btn btn-default">Submit</button>
+						</form>
 					</div>
 				</Draggable>
 			</div>

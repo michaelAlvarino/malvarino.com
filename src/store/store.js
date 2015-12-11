@@ -4,11 +4,6 @@ import Constants from '../constants/constants'
 
 const CHANGE_EVENT = "change";
 
-// var data = {
-// 	calculator: null
-// };
-
-
 class StoreCls extends EventEmitter {
 
 	constructor() {
@@ -38,13 +33,11 @@ class StoreCls extends EventEmitter {
 const Store = new StoreCls();
 
 Store.dispatchToken = Dispatcho.register((payload) => {
-	console.log(payload);
 	switch(payload.actionType){
 		case Constants.CALCULATE:
 			console.log("Matched case: " + Constants.CALCULATE);
-			let calc = Number(payload.item.target.previousElementSibling.value);
-			Store.data["calculator"] = calc * 2;
-			console.log(Store.data["calculator"]);
+			let val = Number(payload.item);
+			Store.data.calculator = val * 2;
 			Store.emitChange();
 			break;
 

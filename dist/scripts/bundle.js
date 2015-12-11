@@ -25766,26 +25766,31 @@ var Calculator = (function (_Component) {
 
 		_get(Object.getPrototypeOf(Calculator.prototype), 'constructor', this).call(this, props);
 		this.state = _storeStore2['default'].getData();
-		console.log(this.state);
-		this.onChange = this.onChange.bind(this);
+		this.handleChange = this.handleChange.bind(this);
 	}
 
 	_createClass(Calculator, [{
-		key: 'onChange',
-		value: function onChange() {
-			// console.log(Store.getData());
-			this.setState(_storeStore2['default'].getData());
+		key: 'handleChange',
+		value: function handleChange(event) {
+			// only handle the change if it exists
+			// without this conditional, handlechange is called when handleSubmit changes
+			// the value attribute of our input field. this could normally be resolved by
+			// displaying the result somewhere other than the input field...
+			if (!!event) {
+				this.setState({ calculator: event.target.value });
+			};
 		}
 	}, {
 		key: 'componentDidMount',
 		value: function componentDidMount() {
-			_storeStore2['default'].addChangeListener(this.onChange);
+			_storeStore2['default'].addChangeListener(this.handleChange);
 		}
 	}, {
-		key: 'handleClick',
-		value: function handleClick(e) {
-			console.log(e);
-			_actionsCalcActions2['default'].Calculate(e);
+		key: 'handleSubmit',
+		value: function handleSubmit(event) {
+			event.preventDefault();
+			_actionsCalcActions2['default'].Calculate(event.target["0"].value);
+			this.setState(_storeStore2['default'].getData());
 		}
 	}, {
 		key: 'render',
@@ -25816,10 +25821,21 @@ var Calculator = (function (_Component) {
 							)
 						),
 						_react2['default'].createElement(
-							'div',
-							null,
-							_react2['default'].createElement('input', { type: 'text', value: this.state["calculator"] }),
-							_react2['default'].createElement('input', { type: 'submit', value: 'Calculate!', onClick: this.handleClick.bind(this) })
+							'form',
+							{ className: 'navbar-form navbar-left', onSubmit: this.handleSubmit.bind(this), role: 'search' },
+							_react2['default'].createElement(
+								'div',
+								{ className: 'form-group' },
+								_react2['default'].createElement('input', { type: 'text',
+									onChange: this.handleChange.bind(this),
+									value: this.state.calculator,
+									className: 'form-control', placeholder: 'Search' })
+							),
+							_react2['default'].createElement(
+								'button',
+								{ type: 'submit', className: 'btn btn-default' },
+								'Submit'
+							)
 						)
 					)
 				)
@@ -27232,10 +27248,6 @@ var _constantsConstants2 = _interopRequireDefault(_constantsConstants);
 
 var CHANGE_EVENT = "change";
 
-// var data = {
-// 	calculator: null
-// };
-
 var StoreCls = (function (_EventEmitter) {
 	_inherits(StoreCls, _EventEmitter);
 
@@ -27276,13 +27288,11 @@ var StoreCls = (function (_EventEmitter) {
 var Store = new StoreCls();
 
 Store.dispatchToken = _dispatcherDispatcher2['default'].register(function (payload) {
-	console.log(payload);
 	switch (payload.actionType) {
 		case _constantsConstants2['default'].CALCULATE:
 			console.log("Matched case: " + _constantsConstants2['default'].CALCULATE);
-			var calc = Number(payload.item.target.previousElementSibling.value);
-			Store.data["calculator"] = calc * 2;
-			console.log(Store.data["calculator"]);
+			var val = Number(payload.item);
+			Store.data.calculator = val * 2;
 			Store.emitChange();
 			break;
 
