@@ -1,6 +1,7 @@
 import Dispatcho from '../dispatcher/dispatcher'
 import EventEmitter from 'events'
 import Constants from '../constants/constants'
+import Bst from '../dataStructures/bst'
 
 const CHANGE_EVENT = "change";
 
@@ -35,15 +36,18 @@ const Store = new StoreCls();
 Store.dispatchToken = Dispatcho.register((payload) => {
 	switch(payload.actionType){
 		case Constants.CALCULATE:
-			console.log("Matched case: " + Constants.CALCULATE);
-			let val = Number(payload.item);
-			Store.data.calculator = val * 2;
+			calculate(payload.item);
 			Store.emitChange();
 			break;
-
 		default:
 			//no-op
 	}
 });
 
+function calculate(str){
+	let bst = new Bst();
+	bst.parse(str);
+}
+
 export default Store;
+

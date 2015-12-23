@@ -60,3 +60,4 @@ export default class Calculator extends Component{
 		);
 	}
 }
+Calculator.propTypes = { calculator: React.PropTypes.number };

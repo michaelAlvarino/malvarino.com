@@ -10,8 +10,6 @@ import Constants from '../constants/constants'
 const CalcActions = {
 	// define the function
 	Calculate: (data) => {
-		// log what we're doing
-		console.log("Dispatching");
 		//dispatch the action
 		Dispatcho.dispatch({
 			actionType: Constants.CALCULATE,

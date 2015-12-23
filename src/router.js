@@ -20,3 +20,8 @@ render((
 	<Route path="*" component={ NoMatch }/>
   </Router>
 ), document.getElementById('app'));
+
+// add an isEmpty function to array prototypes...
+Array.prototype.isEmpty = function(){
+	return !(this.length > 0);
+}

@@ -25702,8 +25702,6 @@ var _constantsConstants2 = _interopRequireDefault(_constantsConstants);
 var CalcActions = {
 	// define the function
 	Calculate: function Calculate(data) {
-		// log what we're doing
-		console.log("Dispatching");
 		//dispatch the action
 		_dispatcherDispatcher2['default'].dispatch({
 			actionType: _constantsConstants2['default'].CALCULATE,
@@ -25715,7 +25713,7 @@ var CalcActions = {
 exports['default'] = CalcActions;
 module.exports = exports['default'];
 
-},{"../constants/constants":230,"../dispatcher/dispatcher":231}],215:[function(require,module,exports){
+},{"../constants/constants":230,"../dispatcher/dispatcher":232}],215:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -25847,9 +25845,11 @@ var Calculator = (function (_Component) {
 })(_react.Component);
 
 exports['default'] = Calculator;
+
+Calculator.propTypes = { calculator: _react2['default'].PropTypes.number };
 module.exports = exports['default'];
 
-},{"../../actions/calcActions":214,"../../store/store":233,"../shared/maNavbar":229,"react":212,"react-draggable":32,"react-router":52}],216:[function(require,module,exports){
+},{"../../actions/calcActions":214,"../../store/store":234,"../shared/maNavbar":229,"react":212,"react-draggable":32,"react-router":52}],216:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -27143,6 +27143,57 @@ exports["default"] = Constants;
 module.exports = exports["default"];
 
 },{}],231:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Bst = (function () {
+	function Bst(expression) {
+		_classCallCheck(this, Bst);
+
+		this.operation = [];
+		this.values = [];
+		this.output = [];
+	}
+
+	_createClass(Bst, [{
+		key: "parse",
+		value: function parse(str) {
+			// easier to treat these arrays like queues than to reverse them?
+			this.values = str.match(/(?:\d*\.)?\d+/g).map(function (val) {
+				return val.trim();
+			});
+			this.operations = str.match(/[()+\-/*]/g).map(function (op) {
+				return op.trim();
+			});
+			console.log(this.values);
+			console.log(this.operations);
+			this.calc(this.operations, this.values);
+		}
+	}, {
+		key: "calc",
+		value: function calc(ops, vals) {
+			while (!ops.isEmpty() && !vals.isEmpty()) {
+				this.output.push(ops.shift());
+				this.output.push(vals.shift());
+			}
+			console.log(this.output);
+		}
+	}]);
+
+	return Bst;
+})();
+
+exports["default"] = Bst;
+module.exports = exports["default"];
+
+},{}],232:[function(require,module,exports){
 /*
 * Import fb flux dispatcher
 */
@@ -27165,7 +27216,7 @@ var Dispatcho = new _flux.Dispatcher();
 exports['default'] = Dispatcho;
 module.exports = exports['default'];
 
-},{"flux":3}],232:[function(require,module,exports){
+},{"flux":3}],233:[function(require,module,exports){
 // react stuff
 'use strict';
 
@@ -27217,7 +27268,12 @@ var _componentsCalculatorCalculator2 = _interopRequireDefault(_componentsCalcula
   _react2['default'].createElement(_reactRouter.Route, { path: '*', component: _componentsNoMatch2['default'] })
 ), document.getElementById('app'));
 
-},{"./components/calculator/calculator":215,"./components/home/home":216,"./components/noMatch":217,"./components/resume/resume":225,"./components/rqms/draggableGraph":227,"history/lib/createBrowserHistory":11,"react":212,"react-dom":31,"react-router":52}],233:[function(require,module,exports){
+// add an isEmpty function to array prototypes...
+Array.prototype.isEmpty = function () {
+  return !(this.length > 0);
+};
+
+},{"./components/calculator/calculator":215,"./components/home/home":216,"./components/noMatch":217,"./components/resume/resume":225,"./components/rqms/draggableGraph":227,"history/lib/createBrowserHistory":11,"react":212,"react-dom":31,"react-router":52}],234:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -27245,6 +27301,10 @@ var _events2 = _interopRequireDefault(_events);
 var _constantsConstants = require('../constants/constants');
 
 var _constantsConstants2 = _interopRequireDefault(_constantsConstants);
+
+var _dataStructuresBst = require('../dataStructures/bst');
+
+var _dataStructuresBst2 = _interopRequireDefault(_dataStructuresBst);
 
 var CHANGE_EVENT = "change";
 
@@ -27290,18 +27350,20 @@ var Store = new StoreCls();
 Store.dispatchToken = _dispatcherDispatcher2['default'].register(function (payload) {
 	switch (payload.actionType) {
 		case _constantsConstants2['default'].CALCULATE:
-			console.log("Matched case: " + _constantsConstants2['default'].CALCULATE);
-			var val = Number(payload.item);
-			Store.data.calculator = val * 2;
+			calculate(payload.item);
 			Store.emitChange();
 			break;
-
 		default:
 		//no-op
 	}
 });
 
+function calculate(str) {
+	var bst = new _dataStructuresBst2['default']();
+	bst.parse(str);
+}
+
 exports['default'] = Store;
 module.exports = exports['default'];
 
-},{"../constants/constants":230,"../dispatcher/dispatcher":231,"events":1}]},{},[232]);
+},{"../constants/constants":230,"../dataStructures/bst":231,"../dispatcher/dispatcher":232,"events":1}]},{},[233]);
