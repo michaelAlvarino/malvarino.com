@@ -6,7 +6,7 @@ export default class Languages extends Component{
 	render(){
 		return(	
 			<div>
-				<div className="page-header"><h1>Languages I've Used</h1></div>
+				<h1><p>Languages I've Used</p></h1>
 			    <LanguageList/>
 		    </div>
 		);

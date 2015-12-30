@@ -8,7 +8,7 @@ import createBrowserHistory from 'history/lib/createBrowserHistory'
 import Resume from './components/resume/resume';
 import NoMatch from './components/noMatch';
 import DraggableGraph from './components/rqms/draggableGraph';
-import Home from './components/home/home';
+import Home from './components/home';
 import Calculator from './components/calculator/calculator';
 
 render((

@@ -1,0 +1,31 @@
+//
+// so that they'll have the same background color as a default anywhere in my website
+html, body{
+	height:100%;
+	margin:0;
+	padding:0;
+	background-color: #DCDCDC;
+	font-family: sans-serif;
+	a, a:link, a:visited{
+		margin:0;
+		padding:0;
+		text-decroation: none;
+	}
+	p{
+		margin:0;
+		padding:0;
+		color: $font-color;
+		font-size: 40px;
+	}
+	li{
+		margin:0;
+		padding:0;
+		list-style: none;
+	}
+}
+
+//
+// remove all underlines from anywhere in my website
+
+//
+// at the very least i want sans-serif 20px font everywhere

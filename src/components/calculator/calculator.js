@@ -1,8 +1,8 @@
 import React, {Component, PropTypes} from 'react'
 import {Router, Route, Link} from 'react-router'
 import Draggable from 'react-draggable'
-import MaNavbar from '../shared/maNavbar'
 import CalcActions from '../../actions/calcActions'
+import HomeButton from '../home/homeButton';
 
 /*
 * import store
@@ -33,7 +33,7 @@ export default class Calculator extends Component{
 	render(){
 		return(
 			<div>
-				<MaNavbar/>
+				<HomeButton/>
 				<Draggable
 					handle=".calculatorHandle"
 					axis="both"

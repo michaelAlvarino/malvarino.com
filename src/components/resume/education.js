@@ -5,35 +5,35 @@ export default class Education extends Component{
 	render(){
 		return(	
 			<div>
-				<div className="page-header"><h1>Education</h1></div>
+				<div className="page-header"><h1><p>Education</p></h1></div>
 			    <table className="table" >
 			      <thead>
 			        <tr>
-			          <th>University</th>
-			          <th>Degree</th>
-			          <th>Time</th>
+			          <th><p>University</p></th>
+			          <th><p>Degree</p></th>
+			          <th><p>Time</p></th>
 			        </tr>
 			      </thead>
 			      <tbody>
 			        <tr>
-			          <td>Columbia University, School of Continuing Education</td>
-			          <td>Graduate Foundations, PostBacc</td>
-			          <td>September 2015 - Current</td>
+			          <td><p>Columbia University, School of Continuing Education</p></td>
+			          <td><p>Graduate Foundations, PostBacc</p></td>
+			          <td><p>September 2015 - Current</p></td>
 			        </tr>
 			        <tr>
-			          <td>Cornell University, School of Arts and Sciences</td>
-			          <td>Bachelors of Mathematics</td>
-			          <td>September 2010 - May 2013</td>
+			          <td><p>Cornell University, School of Arts and Sciences</p></td>
+			          <td><p>Bachelors of Mathematics</p></td>
+			          <td><p>September 2010 - May 2013</p></td>
 			        </tr>
 			        <tr>
-			          <td>Cornell University, School of Arts and Sciences</td>
-			          <td>Bachelors of Economics</td>
-			          <td>September 2010 - May 2013</td>
+			          <td><p>Cornell University, School of Arts and Sciences</p></td>
+			          <td><p>Bachelors of Economics</p></td>
+			          <td><p>September 2010 - May 2013</p></td>
 			        </tr>
 			        <tr>
-			          <td>Rutgers University</td>
-			          <td>Transferred</td>
-			          <td>September 2009 - May 2010</td>
+			          <td><p>Rutgers University</p></td>
+			          <td><p>Transferred</p></td>
+			          <td><p>September 2009 - May 2010</p></td>
 			        </tr>
 			      </tbody>
 			    </table>

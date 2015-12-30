@@ -25740,13 +25740,13 @@ var _reactDraggable = require('react-draggable');
 
 var _reactDraggable2 = _interopRequireDefault(_reactDraggable);
 
-var _sharedMaNavbar = require('../shared/maNavbar');
-
-var _sharedMaNavbar2 = _interopRequireDefault(_sharedMaNavbar);
-
 var _actionsCalcActions = require('../../actions/calcActions');
 
 var _actionsCalcActions2 = _interopRequireDefault(_actionsCalcActions);
+
+var _homeHomeButton = require('../home/homeButton');
+
+var _homeHomeButton2 = _interopRequireDefault(_homeHomeButton);
 
 /*
 * import store
@@ -25796,7 +25796,7 @@ var Calculator = (function (_Component) {
 			return _react2['default'].createElement(
 				'div',
 				null,
-				_react2['default'].createElement(_sharedMaNavbar2['default'], null),
+				_react2['default'].createElement(_homeHomeButton2['default'], null),
 				_react2['default'].createElement(
 					_reactDraggable2['default'],
 					{
@@ -25849,7 +25849,7 @@ exports['default'] = Calculator;
 Calculator.propTypes = { calculator: _react2['default'].PropTypes.number };
 module.exports = exports['default'];
 
-},{"../../actions/calcActions":214,"../../store/store":234,"../shared/maNavbar":229,"react":212,"react-draggable":32,"react-router":52}],216:[function(require,module,exports){
+},{"../../actions/calcActions":214,"../../store/store":234,"../home/homeButton":217,"react":212,"react-draggable":32,"react-router":52}],216:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -25870,9 +25870,11 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _sharedMaNavbar = require('../shared/maNavbar');
+var _reactRouter = require('react-router');
 
-var _sharedMaNavbar2 = _interopRequireDefault(_sharedMaNavbar);
+var _homeHomeButton = require('./home/homeButton');
+
+var _homeHomeButton2 = _interopRequireDefault(_homeHomeButton);
 
 var Home = (function (_Component) {
 	_inherits(Home, _Component);
@@ -25888,15 +25890,66 @@ var Home = (function (_Component) {
 		value: function render() {
 			return _react2['default'].createElement(
 				'div',
-				{ className: 'container' },
-				_react2['default'].createElement(_sharedMaNavbar2['default'], null),
+				null,
+				_react2['default'].createElement(_homeHomeButton2['default'], null),
 				_react2['default'].createElement(
-					'div',
-					{ className: 'jumbotron' },
+					'ul',
+					{ className: 'homepage' },
 					_react2['default'].createElement(
-						'p',
-						null,
-						'Welcome to my webpage! This is the home of all my development projects, proof of concepts, and links to my favorite resources. Hopefully through this you can learn a little about development and a little about myself.'
+						'li',
+						{ className: 'clickcube' },
+						_react2['default'].createElement(
+							_reactRouter.Link,
+							{ to: '/About-Me' },
+							_react2['default'].createElement(
+								'p',
+								null,
+								'About Me'
+							)
+						)
+					),
+					_react2['default'].createElement(
+						'li',
+						{ className: 'clickcube' },
+						_react2['default'].createElement(
+							'a',
+							{ href: 'http://imbadatcleverurls.blogspot.com/' },
+							_react2['default'].createElement(
+								'p',
+								null,
+								'My Blog!'
+							)
+						)
+					)
+				),
+				_react2['default'].createElement(
+					'ul',
+					{ className: 'homepage' },
+					_react2['default'].createElement(
+						'li',
+						{ className: 'clickcube' },
+						_react2['default'].createElement(
+							_reactRouter.Link,
+							{ to: '/Calculator' },
+							_react2['default'].createElement(
+								'p',
+								null,
+								'Calculator'
+							)
+						)
+					),
+					_react2['default'].createElement(
+						'li',
+						{ className: 'clickcube' },
+						_react2['default'].createElement(
+							_reactRouter.Link,
+							{ to: '/DraggableGraph' },
+							_react2['default'].createElement(
+								'p',
+								null,
+								'Draggable Graph'
+							)
+						)
 					)
 				)
 			);
@@ -25909,7 +25962,64 @@ var Home = (function (_Component) {
 exports['default'] = Home;
 module.exports = exports['default'];
 
-},{"../shared/maNavbar":229,"react":212}],217:[function(require,module,exports){
+},{"./home/homeButton":217,"react":212,"react-router":52}],217:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+	value: true
+});
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouter = require('react-router');
+
+var HomeButton = (function (_Component) {
+	_inherits(HomeButton, _Component);
+
+	function HomeButton() {
+		_classCallCheck(this, HomeButton);
+
+		_get(Object.getPrototypeOf(HomeButton.prototype), 'constructor', this).apply(this, arguments);
+	}
+
+	_createClass(HomeButton, [{
+		key: 'render',
+		value: function render() {
+			return _react2['default'].createElement(
+				_reactRouter.Link,
+				{ to: '/' },
+				_react2['default'].createElement(
+					'div',
+					{ className: 'home' },
+					_react2['default'].createElement(
+						'p',
+						null,
+						'Home'
+					)
+				)
+			);
+		}
+	}]);
+
+	return HomeButton;
+})(_react.Component);
+
+exports['default'] = HomeButton;
+module.exports = exports['default'];
+
+},{"react":212,"react-router":52}],218:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -25956,22 +26066,22 @@ var NoMatch = (function (_Component) {
 exports['default'] = NoMatch;
 module.exports = exports['default'];
 
-},{"react":212}],218:[function(require,module,exports){
-"use strict";
+},{"react":212}],219:[function(require,module,exports){
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
 	value: true
 });
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _react = require('react');
 
@@ -25983,23 +26093,31 @@ var Contact = (function (_Component) {
 	function Contact() {
 		_classCallCheck(this, Contact);
 
-		_get(Object.getPrototypeOf(Contact.prototype), "constructor", this).apply(this, arguments);
+		_get(Object.getPrototypeOf(Contact.prototype), 'constructor', this).apply(this, arguments);
 	}
 
 	_createClass(Contact, [{
-		key: "render",
+		key: 'render',
 		value: function render() {
-			return _react2["default"].createElement(
-				"div",
-				{ className: "page-header" },
-				_react2["default"].createElement(
-					"h1",
+			return _react2['default'].createElement(
+				'div',
+				null,
+				_react2['default'].createElement(
+					'h1',
 					null,
-					"Michael Alvarino ",
-					_react2["default"].createElement(
-						"small",
+					_react2['default'].createElement(
+						'p',
 						null,
-						"michael.alvarino@gmail.com"
+						'Michael Alvarino'
+					)
+				),
+				_react2['default'].createElement(
+					'h2',
+					null,
+					_react2['default'].createElement(
+						'p',
+						null,
+						'michael.alvarino@gmail.com'
 					)
 				)
 			);
@@ -26009,10 +26127,10 @@ var Contact = (function (_Component) {
 	return Contact;
 })(_react.Component);
 
-exports["default"] = Contact;
-module.exports = exports["default"];
+exports['default'] = Contact;
+module.exports = exports['default'];
 
-},{"react":212}],219:[function(require,module,exports){
+},{"react":212}],220:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26054,7 +26172,11 @@ var Education = (function (_Component) {
 					_react2["default"].createElement(
 						"h1",
 						null,
-						"Education"
+						_react2["default"].createElement(
+							"p",
+							null,
+							"Education"
+						)
 					)
 				),
 				_react2["default"].createElement(
@@ -26069,17 +26191,29 @@ var Education = (function (_Component) {
 							_react2["default"].createElement(
 								"th",
 								null,
-								"University"
+								_react2["default"].createElement(
+									"p",
+									null,
+									"University"
+								)
 							),
 							_react2["default"].createElement(
 								"th",
 								null,
-								"Degree"
+								_react2["default"].createElement(
+									"p",
+									null,
+									"Degree"
+								)
 							),
 							_react2["default"].createElement(
 								"th",
 								null,
-								"Time"
+								_react2["default"].createElement(
+									"p",
+									null,
+									"Time"
+								)
 							)
 						)
 					),
@@ -26092,17 +26226,29 @@ var Education = (function (_Component) {
 							_react2["default"].createElement(
 								"td",
 								null,
-								"Columbia University, School of Continuing Education"
+								_react2["default"].createElement(
+									"p",
+									null,
+									"Columbia University, School of Continuing Education"
+								)
 							),
 							_react2["default"].createElement(
 								"td",
 								null,
-								"Graduate Foundations, PostBacc"
+								_react2["default"].createElement(
+									"p",
+									null,
+									"Graduate Foundations, PostBacc"
+								)
 							),
 							_react2["default"].createElement(
 								"td",
 								null,
-								"September 2015 - Current"
+								_react2["default"].createElement(
+									"p",
+									null,
+									"September 2015 - Current"
+								)
 							)
 						),
 						_react2["default"].createElement(
@@ -26111,17 +26257,29 @@ var Education = (function (_Component) {
 							_react2["default"].createElement(
 								"td",
 								null,
-								"Cornell University, School of Arts and Sciences"
+								_react2["default"].createElement(
+									"p",
+									null,
+									"Cornell University, School of Arts and Sciences"
+								)
 							),
 							_react2["default"].createElement(
 								"td",
 								null,
-								"Bachelors of Mathematics"
+								_react2["default"].createElement(
+									"p",
+									null,
+									"Bachelors of Mathematics"
+								)
 							),
 							_react2["default"].createElement(
 								"td",
 								null,
-								"September 2010 - May 2013"
+								_react2["default"].createElement(
+									"p",
+									null,
+									"September 2010 - May 2013"
+								)
 							)
 						),
 						_react2["default"].createElement(
@@ -26130,17 +26288,29 @@ var Education = (function (_Component) {
 							_react2["default"].createElement(
 								"td",
 								null,
-								"Cornell University, School of Arts and Sciences"
+								_react2["default"].createElement(
+									"p",
+									null,
+									"Cornell University, School of Arts and Sciences"
+								)
 							),
 							_react2["default"].createElement(
 								"td",
 								null,
-								"Bachelors of Economics"
+								_react2["default"].createElement(
+									"p",
+									null,
+									"Bachelors of Economics"
+								)
 							),
 							_react2["default"].createElement(
 								"td",
 								null,
-								"September 2010 - May 2013"
+								_react2["default"].createElement(
+									"p",
+									null,
+									"September 2010 - May 2013"
+								)
 							)
 						),
 						_react2["default"].createElement(
@@ -26149,17 +26319,29 @@ var Education = (function (_Component) {
 							_react2["default"].createElement(
 								"td",
 								null,
-								"Rutgers University"
+								_react2["default"].createElement(
+									"p",
+									null,
+									"Rutgers University"
+								)
 							),
 							_react2["default"].createElement(
 								"td",
 								null,
-								"Transferred"
+								_react2["default"].createElement(
+									"p",
+									null,
+									"Transferred"
+								)
 							),
 							_react2["default"].createElement(
 								"td",
 								null,
-								"September 2009 - May 2010"
+								_react2["default"].createElement(
+									"p",
+									null,
+									"September 2009 - May 2010"
+								)
 							)
 						)
 					)
@@ -26174,22 +26356,22 @@ var Education = (function (_Component) {
 exports["default"] = Education;
 module.exports = exports["default"];
 
-},{"react":212}],220:[function(require,module,exports){
-'use strict';
+},{"react":212}],221:[function(require,module,exports){
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _react = require('react');
 
@@ -26201,49 +26383,77 @@ var FrameworkList = (function (_Component) {
 	function FrameworkList() {
 		_classCallCheck(this, FrameworkList);
 
-		_get(Object.getPrototypeOf(FrameworkList.prototype), 'constructor', this).apply(this, arguments);
+		_get(Object.getPrototypeOf(FrameworkList.prototype), "constructor", this).apply(this, arguments);
 	}
 
 	_createClass(FrameworkList, [{
-		key: 'render',
+		key: "render",
 		value: function render() {
-			return _react2['default'].createElement(
-				'ul',
-				null,
-				_react2['default'].createElement(
-					'li',
+			return _react2["default"].createElement(
+				"ul",
+				{ className: "FrameworkList" },
+				_react2["default"].createElement(
+					"li",
 					null,
-					'React.js'
+					_react2["default"].createElement(
+						"p",
+						null,
+						"React.js"
+					)
 				),
-				_react2['default'].createElement(
-					'li',
+				_react2["default"].createElement(
+					"li",
 					null,
-					'Node.js/Express.js'
+					_react2["default"].createElement(
+						"p",
+						null,
+						"Node.js/Express.js"
+					)
 				),
-				_react2['default'].createElement(
-					'li',
+				_react2["default"].createElement(
+					"li",
 					null,
-					'Gulp'
+					_react2["default"].createElement(
+						"p",
+						null,
+						"Gulp"
+					)
 				),
-				_react2['default'].createElement(
-					'li',
+				_react2["default"].createElement(
+					"li",
 					null,
-					'Sass'
+					_react2["default"].createElement(
+						"p",
+						null,
+						"Sass"
+					)
 				),
-				_react2['default'].createElement(
-					'li',
+				_react2["default"].createElement(
+					"li",
 					null,
-					'Proprietary Frameworks'
+					_react2["default"].createElement(
+						"p",
+						null,
+						"Proprietary Frameworks"
+					)
 				),
-				_react2['default'].createElement(
-					'li',
+				_react2["default"].createElement(
+					"li",
 					null,
-					'AngularJs'
+					_react2["default"].createElement(
+						"p",
+						null,
+						"AngularJs"
+					)
 				),
-				_react2['default'].createElement(
-					'li',
+				_react2["default"].createElement(
+					"li",
 					null,
-					'Bootstrap'
+					_react2["default"].createElement(
+						"p",
+						null,
+						"Bootstrap"
+					)
 				)
 			);
 		}
@@ -26252,10 +26462,10 @@ var FrameworkList = (function (_Component) {
 	return FrameworkList;
 })(_react.Component);
 
-exports['default'] = FrameworkList;
-module.exports = exports['default'];
+exports["default"] = FrameworkList;
+module.exports = exports["default"];
 
-},{"react":212}],221:[function(require,module,exports){
+},{"react":212}],222:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -26294,12 +26504,12 @@ var Frameworks = (function (_Component) {
 		value: function render() {
 			return _react2['default'].createElement(
 				'div',
-				{ className: 'hidden-sm' },
+				{ className: 'Frameworks' },
 				_react2['default'].createElement(
-					'div',
-					{ className: 'page-header' },
+					'h1',
+					null,
 					_react2['default'].createElement(
-						'h1',
+						'p',
 						null,
 						'Frameworks I\'m Familiar With'
 					)
@@ -26315,7 +26525,7 @@ var Frameworks = (function (_Component) {
 exports['default'] = Frameworks;
 module.exports = exports['default'];
 
-},{"./frameworkList":220,"react":212}],222:[function(require,module,exports){
+},{"./frameworkList":221,"react":212}],223:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26399,22 +26609,22 @@ var Hobbies = (function (_Component) {
 exports["default"] = Hobbies;
 module.exports = exports["default"];
 
-},{"react":212}],223:[function(require,module,exports){
-'use strict';
+},{"react":212}],224:[function(require,module,exports){
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _react = require('react');
 
@@ -26426,34 +26636,50 @@ var LanguageList = (function (_Component) {
 	function LanguageList() {
 		_classCallCheck(this, LanguageList);
 
-		_get(Object.getPrototypeOf(LanguageList.prototype), 'constructor', this).apply(this, arguments);
+		_get(Object.getPrototypeOf(LanguageList.prototype), "constructor", this).apply(this, arguments);
 	}
 
 	_createClass(LanguageList, [{
-		key: 'render',
+		key: "render",
 		value: function render() {
-			return _react2['default'].createElement(
-				'ul',
-				null,
-				_react2['default'].createElement(
-					'li',
+			return _react2["default"].createElement(
+				"ul",
+				{ className: "LanguageList" },
+				_react2["default"].createElement(
+					"li",
 					null,
-					'Java'
+					_react2["default"].createElement(
+						"p",
+						null,
+						"Java"
+					)
 				),
-				_react2['default'].createElement(
-					'li',
+				_react2["default"].createElement(
+					"li",
 					null,
-					'Javascript'
+					_react2["default"].createElement(
+						"p",
+						null,
+						"Javascript"
+					)
 				),
-				_react2['default'].createElement(
-					'li',
+				_react2["default"].createElement(
+					"li",
 					null,
-					'C#.NET'
+					_react2["default"].createElement(
+						"p",
+						null,
+						"C#.NET"
+					)
 				),
-				_react2['default'].createElement(
-					'li',
+				_react2["default"].createElement(
+					"li",
 					null,
-					'SQL'
+					_react2["default"].createElement(
+						"p",
+						null,
+						"SQL"
+					)
 				)
 			);
 		}
@@ -26462,10 +26688,10 @@ var LanguageList = (function (_Component) {
 	return LanguageList;
 })(_react.Component);
 
-exports['default'] = LanguageList;
-module.exports = exports['default'];
+exports["default"] = LanguageList;
+module.exports = exports["default"];
 
-},{"react":212}],224:[function(require,module,exports){
+},{"react":212}],225:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -26506,10 +26732,10 @@ var Languages = (function (_Component) {
 				'div',
 				null,
 				_react2['default'].createElement(
-					'div',
-					{ className: 'page-header' },
+					'h1',
+					null,
 					_react2['default'].createElement(
-						'h1',
+						'p',
 						null,
 						'Languages I\'ve Used'
 					)
@@ -26525,7 +26751,7 @@ var Languages = (function (_Component) {
 exports['default'] = Languages;
 module.exports = exports['default'];
 
-},{"./languageList":223,"react":212}],225:[function(require,module,exports){
+},{"./languageList":224,"react":212}],226:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -26570,9 +26796,9 @@ var _hobbies = require('./hobbies');
 
 var _hobbies2 = _interopRequireDefault(_hobbies);
 
-var _sharedMaNavbar = require('../shared/maNavbar');
+var _homeHomeButton = require('../home/homeButton');
 
-var _sharedMaNavbar2 = _interopRequireDefault(_sharedMaNavbar);
+var _homeHomeButton2 = _interopRequireDefault(_homeHomeButton);
 
 var Resume = (function (_Component) {
 	_inherits(Resume, _Component);
@@ -26588,26 +26814,30 @@ var Resume = (function (_Component) {
 		value: function render() {
 			return _react2['default'].createElement(
 				'div',
-				{ className: 'container' },
-				_react2['default'].createElement(_sharedMaNavbar2['default'], null),
-				_react2['default'].createElement(_contact2['default'], null),
-				_react2['default'].createElement(_education2['default'], null),
+				null,
+				_react2['default'].createElement(_homeHomeButton2['default'], null),
 				_react2['default'].createElement(
 					'div',
-					{ className: 'container' },
+					{ className: 'Resume' },
+					_react2['default'].createElement(_contact2['default'], null),
+					_react2['default'].createElement(_education2['default'], null),
 					_react2['default'].createElement(
 						'div',
-						{ className: 'col-s-12 col-md-6' },
-						_react2['default'].createElement(_languagesLanguages2['default'], null)
+						{ className: 'flex' },
+						_react2['default'].createElement(
+							'div',
+							{ className: 'flexItem' },
+							_react2['default'].createElement(_languagesLanguages2['default'], null)
+						),
+						_react2['default'].createElement(
+							'div',
+							{ className: 'flexItem' },
+							_react2['default'].createElement(_frameworksFrameworks2['default'], null)
+						)
 					),
-					_react2['default'].createElement(
-						'div',
-						{ className: 'col-s-12 col-md-6' },
-						_react2['default'].createElement(_frameworksFrameworks2['default'], null)
-					)
-				),
-				_react2['default'].createElement(_workExperienceWorkExperience2['default'], null),
-				_react2['default'].createElement(_hobbies2['default'], null)
+					_react2['default'].createElement(_workExperienceWorkExperience2['default'], null),
+					_react2['default'].createElement(_hobbies2['default'], null)
+				)
 			);
 		}
 	}]);
@@ -26618,7 +26848,7 @@ var Resume = (function (_Component) {
 exports['default'] = Resume;
 module.exports = exports['default'];
 
-},{"../shared/maNavbar":229,"./contact":218,"./education":219,"./frameworks/frameworks":221,"./hobbies":222,"./languages/languages":224,"./workExperience/workExperience":226,"react":212}],226:[function(require,module,exports){
+},{"../home/homeButton":217,"./contact":219,"./education":220,"./frameworks/frameworks":222,"./hobbies":223,"./languages/languages":225,"./workExperience/workExperience":227,"react":212}],227:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26853,7 +27083,7 @@ WorkExperience.propTypes = { isiGlyphIconType: _react2["default"].PropTypes.stri
 WorkExperience.defaultProps = { isiGlyphIconType: "glyphicon glyphicon-chevron-down" };
 module.exports = exports["default"];
 
-},{"react":212}],227:[function(require,module,exports){
+},{"react":212}],228:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -26882,9 +27112,9 @@ var _graph = require('./graph');
 
 var _graph2 = _interopRequireDefault(_graph);
 
-var _sharedMaNavbar = require('../shared/maNavbar');
+var _homeHomeButton = require('../home/homeButton');
 
-var _sharedMaNavbar2 = _interopRequireDefault(_sharedMaNavbar);
+var _homeHomeButton2 = _interopRequireDefault(_homeHomeButton);
 
 var DraggableGraph = (function (_Component) {
     _inherits(DraggableGraph, _Component);
@@ -26902,7 +27132,7 @@ var DraggableGraph = (function (_Component) {
             return _react2['default'].createElement(
                 'div',
                 { className: 'container' },
-                _react2['default'].createElement(_sharedMaNavbar2['default'], null),
+                _react2['default'].createElement(_homeHomeButton2['default'], null),
                 _react2['default'].createElement(
                     _reactDraggable2['default'],
                     {
@@ -26939,7 +27169,7 @@ DraggableGraph.defaultProps = { Data: [{
     }] };
 module.exports = exports['default'];
 
-},{"../shared/maNavbar":229,"./graph":228,"react":212,"react-draggable":32}],228:[function(require,module,exports){
+},{"../home/homeButton":217,"./graph":229,"react":212,"react-draggable":32}],229:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -27008,128 +27238,7 @@ Graph.propTypes = {
 };
 module.exports = exports['default'];
 
-},{"react":212}],229:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-	value: true
-});
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouter = require('react-router');
-
-var MaNavbar = (function (_Component) {
-	_inherits(MaNavbar, _Component);
-
-	function MaNavbar() {
-		_classCallCheck(this, MaNavbar);
-
-		_get(Object.getPrototypeOf(MaNavbar.prototype), 'constructor', this).apply(this, arguments);
-	}
-
-	_createClass(MaNavbar, [{
-		key: 'render',
-		value: function render() {
-			return _react2['default'].createElement(
-				'nav',
-				{ className: 'navbar navbar-default' },
-				_react2['default'].createElement(
-					'div',
-					{ className: 'container container-fluid' },
-					_react2['default'].createElement(
-						'ul',
-						{ className: 'nav nav-pills' },
-						_react2['default'].createElement(
-							'li',
-							null,
-							_react2['default'].createElement(
-								_reactRouter.Link,
-								{ to: '/' },
-								_react2['default'].createElement(
-									'p',
-									null,
-									'Home'
-								)
-							)
-						),
-						_react2['default'].createElement(
-							'li',
-							{ role: 'presentation' },
-							_react2['default'].createElement(
-								_reactRouter.Link,
-								{ to: '/About-Me' },
-								_react2['default'].createElement(
-									'p',
-									null,
-									'About Me'
-								)
-							)
-						),
-						_react2['default'].createElement(
-							'li',
-							{ role: 'presentation' },
-							_react2['default'].createElement(
-								'a',
-								{ href: 'http://imbadatcleverurls.blogspot.com/' },
-								_react2['default'].createElement(
-									'p',
-									null,
-									'My Blog!'
-								)
-							)
-						),
-						_react2['default'].createElement(
-							'li',
-							{ role: 'presentation' },
-							_react2['default'].createElement(
-								_reactRouter.Link,
-								{ to: '/DraggableGraph' },
-								_react2['default'].createElement(
-									'p',
-									null,
-									'Draggable Graph'
-								)
-							)
-						),
-						_react2['default'].createElement(
-							'li',
-							{ role: 'presentation' },
-							_react2['default'].createElement(
-								_reactRouter.Link,
-								{ to: '/Calculator' },
-								_react2['default'].createElement(
-									'p',
-									null,
-									'Calculator'
-								)
-							)
-						)
-					)
-				)
-			);
-		}
-	}]);
-
-	return MaNavbar;
-})(_react.Component);
-
-exports['default'] = MaNavbar;
-module.exports = exports['default'];
-
-},{"react":212,"react-router":52}],230:[function(require,module,exports){
+},{"react":212}],230:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -27250,9 +27359,9 @@ var _componentsRqmsDraggableGraph = require('./components/rqms/draggableGraph');
 
 var _componentsRqmsDraggableGraph2 = _interopRequireDefault(_componentsRqmsDraggableGraph);
 
-var _componentsHomeHome = require('./components/home/home');
+var _componentsHome = require('./components/home');
 
-var _componentsHomeHome2 = _interopRequireDefault(_componentsHomeHome);
+var _componentsHome2 = _interopRequireDefault(_componentsHome);
 
 var _componentsCalculatorCalculator = require('./components/calculator/calculator');
 
@@ -27261,7 +27370,7 @@ var _componentsCalculatorCalculator2 = _interopRequireDefault(_componentsCalcula
 (0, _reactDom.render)(_react2['default'].createElement(
   _reactRouter.Router,
   { history: (0, _historyLibCreateBrowserHistory2['default'])() },
-  _react2['default'].createElement(_reactRouter.Route, { path: '/', component: _componentsHomeHome2['default'] }),
+  _react2['default'].createElement(_reactRouter.Route, { path: '/', component: _componentsHome2['default'] }),
   _react2['default'].createElement(_reactRouter.Route, { path: 'About-Me', component: _componentsResumeResume2['default'] }),
   _react2['default'].createElement(_reactRouter.Route, { path: 'DraggableGraph', component: _componentsRqmsDraggableGraph2['default'] }),
   _react2['default'].createElement(_reactRouter.Route, { path: 'Calculator', component: _componentsCalculatorCalculator2['default'] }),
@@ -27273,7 +27382,7 @@ Array.prototype.isEmpty = function () {
   return !(this.length > 0);
 };
 
-},{"./components/calculator/calculator":215,"./components/home/home":216,"./components/noMatch":217,"./components/resume/resume":225,"./components/rqms/draggableGraph":227,"history/lib/createBrowserHistory":11,"react":212,"react-dom":31,"react-router":52}],234:[function(require,module,exports){
+},{"./components/calculator/calculator":215,"./components/home":216,"./components/noMatch":218,"./components/resume/resume":226,"./components/rqms/draggableGraph":228,"history/lib/createBrowserHistory":11,"react":212,"react-dom":31,"react-router":52}],234:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {

@@ -1,31 +1,7 @@
-$font-stack:    Helvetica, sans-serif;
-$body-margins: 20%;
-$text-color: #444444;
-$centered: center;
-/* 
-* shared amongst react draggable things...
-*/
-.react-draggable, .cursor {
-  cursor: move;
-}
-.no-cursor {
-  cursor: auto;
-}
-
-/*
-* generic stuff
-*/
-body{
-	font-family: $font-stack;
-	margin-left: $body-margins;
-	margin-right: $body-margins;
-	color: $text-color;
-}
-#panel-title{
-	color: $text-color;
-}
-li{
-	list-style-type: none;
-}
+$font-color: #FFE363;
+$background-color: #CB0077;
+@import 'main';
+@import 'home';
+@import 'homeButton';
+@import 'resume';
 @import 'calculator';
-@import 'draggableGraph';

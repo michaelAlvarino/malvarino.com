@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import Draggable from 'react-draggable';
 import Graph from './graph';
-import MaNavbar from '../shared/maNavbar'
+import HomeButton from '../home/homeButton';
 
 export default class DraggableGraph extends Component{
     constructor(props){
@@ -11,7 +11,7 @@ export default class DraggableGraph extends Component{
 	render(){
 		return(
       <div className="container">
-        <MaNavbar/>
+        <HomeButton/>
 			   <Draggable
                 handle=".handle"
                 axis="both"

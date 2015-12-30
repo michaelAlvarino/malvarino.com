@@ -5,8 +5,8 @@ import FrameworkList from './frameworkList';
 export default class Frameworks extends Component{
 	render(){
 		return(
-			<div className="hidden-sm">
-			    <div className="page-header"><h1>Frameworks I'm Familiar With</h1></div>
+			<div className="Frameworks">
+			    <h1><p>Frameworks I'm Familiar With</p></h1>
 			    <FrameworkList/>
 			</div>
 		);

@@ -1,0 +1,27 @@
+//
+// so languages and frameworks appear beside one another
+div.flex{
+	display: flex;
+	justify-content: center;
+}
+div.flexItem{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+//
+// center everything on this page
+div.Resume{
+	text-align: center;
+}
+//
+// center these things separately
+.table{
+	margin-left: auto;
+	margin-right: auto;
+}
+.table > thead > tr > th > p
+, .table > tbody > tr > td > p
+, ul.FrameworkList > li > p
+, ul.LanguageList > li > p{
+	font-size: 20px;
+}
