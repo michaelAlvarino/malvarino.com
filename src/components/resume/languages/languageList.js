@@ -4,10 +4,10 @@ export default class LanguageList extends Component{
 	render(){
 		return(
 			<ul className="LanguageList">
-				<li><p>Java</p></li>
-				<li><p>Javascript</p></li>
-				<li><p>C#.NET</p></li>
-				<li><p>SQL</p></li>
+				<li><p className="ResumeFont">Java</p></li>
+				<li><p className="ResumeFont">Javascript</p></li>
+				<li><p className="ResumeFont">C#.NET</p></li>
+				<li><p className="ResumeFont">SQL</p></li>
 			</ul>
 		);
 	}

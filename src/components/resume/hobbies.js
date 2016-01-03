@@ -3,14 +3,14 @@ import React, { Component } from 'react';
 export default class Hobbies extends Component{
 	render(){
 		return(
-			<div>
-			    <div className="page-header"><h1>Hobbies</h1></div>
+			<div className="Hobbies">
+			    <div><h1><p>Hobbies</p></h1></div>
 			    <ul>
-					<li>Reading</li>
-					<li>Bayonne Bombers Rugby Club</li>
-					<li>Cornell Rugby Football Club</li>
-					<li>Snowboarding</li>
-					<li>Running and Exercising</li>
+					<li><p className="ResumeFont">Reading</p></li>
+					<li><p className="ResumeFont">Bayonne Bombers Rugby Club</p></li>
+					<li><p className="ResumeFont">Cornell Rugby Football Club</p></li>
+					<li><p className="ResumeFont">Snowboarding</p></li>
+					<li><p className="ResumeFont">Running and Exercising</p></li>
 			    </ul>
 			</div>
 		);

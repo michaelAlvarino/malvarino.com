@@ -26165,7 +26165,7 @@ var Education = (function (_Component) {
 		value: function render() {
 			return _react2["default"].createElement(
 				"div",
-				null,
+				{ className: "Education" },
 				_react2["default"].createElement(
 					"div",
 					{ className: "page-header" },
@@ -26193,7 +26193,7 @@ var Education = (function (_Component) {
 								null,
 								_react2["default"].createElement(
 									"p",
-									null,
+									{ className: "ResumeFont" },
 									"University"
 								)
 							),
@@ -26202,7 +26202,7 @@ var Education = (function (_Component) {
 								null,
 								_react2["default"].createElement(
 									"p",
-									null,
+									{ className: "ResumeFont" },
 									"Degree"
 								)
 							),
@@ -26211,7 +26211,7 @@ var Education = (function (_Component) {
 								null,
 								_react2["default"].createElement(
 									"p",
-									null,
+									{ className: "ResumeFont" },
 									"Time"
 								)
 							)
@@ -26228,7 +26228,7 @@ var Education = (function (_Component) {
 								null,
 								_react2["default"].createElement(
 									"p",
-									null,
+									{ className: "ResumeFont" },
 									"Columbia University, School of Continuing Education"
 								)
 							),
@@ -26237,7 +26237,7 @@ var Education = (function (_Component) {
 								null,
 								_react2["default"].createElement(
 									"p",
-									null,
+									{ className: "ResumeFont" },
 									"Graduate Foundations, PostBacc"
 								)
 							),
@@ -26246,7 +26246,7 @@ var Education = (function (_Component) {
 								null,
 								_react2["default"].createElement(
 									"p",
-									null,
+									{ className: "ResumeFont" },
 									"September 2015 - Current"
 								)
 							)
@@ -26259,7 +26259,7 @@ var Education = (function (_Component) {
 								null,
 								_react2["default"].createElement(
 									"p",
-									null,
+									{ className: "ResumeFont" },
 									"Cornell University, School of Arts and Sciences"
 								)
 							),
@@ -26268,7 +26268,7 @@ var Education = (function (_Component) {
 								null,
 								_react2["default"].createElement(
 									"p",
-									null,
+									{ className: "ResumeFont" },
 									"Bachelors of Mathematics"
 								)
 							),
@@ -26277,7 +26277,7 @@ var Education = (function (_Component) {
 								null,
 								_react2["default"].createElement(
 									"p",
-									null,
+									{ className: "ResumeFont" },
 									"September 2010 - May 2013"
 								)
 							)
@@ -26290,7 +26290,7 @@ var Education = (function (_Component) {
 								null,
 								_react2["default"].createElement(
 									"p",
-									null,
+									{ className: "ResumeFont" },
 									"Cornell University, School of Arts and Sciences"
 								)
 							),
@@ -26299,7 +26299,7 @@ var Education = (function (_Component) {
 								null,
 								_react2["default"].createElement(
 									"p",
-									null,
+									{ className: "ResumeFont" },
 									"Bachelors of Economics"
 								)
 							),
@@ -26308,7 +26308,7 @@ var Education = (function (_Component) {
 								null,
 								_react2["default"].createElement(
 									"p",
-									null,
+									{ className: "ResumeFont" },
 									"September 2010 - May 2013"
 								)
 							)
@@ -26321,7 +26321,7 @@ var Education = (function (_Component) {
 								null,
 								_react2["default"].createElement(
 									"p",
-									null,
+									{ className: "ResumeFont" },
 									"Rutgers University"
 								)
 							),
@@ -26330,7 +26330,7 @@ var Education = (function (_Component) {
 								null,
 								_react2["default"].createElement(
 									"p",
-									null,
+									{ className: "ResumeFont" },
 									"Transferred"
 								)
 							),
@@ -26339,7 +26339,7 @@ var Education = (function (_Component) {
 								null,
 								_react2["default"].createElement(
 									"p",
-									null,
+									{ className: "ResumeFont" },
 									"September 2009 - May 2010"
 								)
 							)
@@ -26397,7 +26397,7 @@ var FrameworkList = (function (_Component) {
 					null,
 					_react2["default"].createElement(
 						"p",
-						null,
+						{ className: "ResumeFont" },
 						"React.js"
 					)
 				),
@@ -26406,7 +26406,7 @@ var FrameworkList = (function (_Component) {
 					null,
 					_react2["default"].createElement(
 						"p",
-						null,
+						{ className: "ResumeFont" },
 						"Node.js/Express.js"
 					)
 				),
@@ -26415,7 +26415,7 @@ var FrameworkList = (function (_Component) {
 					null,
 					_react2["default"].createElement(
 						"p",
-						null,
+						{ className: "ResumeFont" },
 						"Gulp"
 					)
 				),
@@ -26424,7 +26424,7 @@ var FrameworkList = (function (_Component) {
 					null,
 					_react2["default"].createElement(
 						"p",
-						null,
+						{ className: "ResumeFont" },
 						"Sass"
 					)
 				),
@@ -26433,7 +26433,7 @@ var FrameworkList = (function (_Component) {
 					null,
 					_react2["default"].createElement(
 						"p",
-						null,
+						{ className: "ResumeFont" },
 						"Proprietary Frameworks"
 					)
 				),
@@ -26442,7 +26442,7 @@ var FrameworkList = (function (_Component) {
 					null,
 					_react2["default"].createElement(
 						"p",
-						null,
+						{ className: "ResumeFont" },
 						"AngularJs"
 					)
 				),
@@ -26451,7 +26451,7 @@ var FrameworkList = (function (_Component) {
 					null,
 					_react2["default"].createElement(
 						"p",
-						null,
+						{ className: "ResumeFont" },
 						"Bootstrap"
 					)
 				)
@@ -26560,14 +26560,18 @@ var Hobbies = (function (_Component) {
 		value: function render() {
 			return _react2["default"].createElement(
 				"div",
-				null,
+				{ className: "Hobbies" },
 				_react2["default"].createElement(
 					"div",
-					{ className: "page-header" },
+					null,
 					_react2["default"].createElement(
 						"h1",
 						null,
-						"Hobbies"
+						_react2["default"].createElement(
+							"p",
+							null,
+							"Hobbies"
+						)
 					)
 				),
 				_react2["default"].createElement(
@@ -26576,27 +26580,47 @@ var Hobbies = (function (_Component) {
 					_react2["default"].createElement(
 						"li",
 						null,
-						"Reading"
+						_react2["default"].createElement(
+							"p",
+							{ className: "ResumeFont" },
+							"Reading"
+						)
 					),
 					_react2["default"].createElement(
 						"li",
 						null,
-						"Bayonne Bombers Rugby Club"
+						_react2["default"].createElement(
+							"p",
+							{ className: "ResumeFont" },
+							"Bayonne Bombers Rugby Club"
+						)
 					),
 					_react2["default"].createElement(
 						"li",
 						null,
-						"Cornell Rugby Football Club"
+						_react2["default"].createElement(
+							"p",
+							{ className: "ResumeFont" },
+							"Cornell Rugby Football Club"
+						)
 					),
 					_react2["default"].createElement(
 						"li",
 						null,
-						"Snowboarding"
+						_react2["default"].createElement(
+							"p",
+							{ className: "ResumeFont" },
+							"Snowboarding"
+						)
 					),
 					_react2["default"].createElement(
 						"li",
 						null,
-						"Running and Exercising"
+						_react2["default"].createElement(
+							"p",
+							{ className: "ResumeFont" },
+							"Running and Exercising"
+						)
 					)
 				)
 			);
@@ -26650,7 +26674,7 @@ var LanguageList = (function (_Component) {
 					null,
 					_react2["default"].createElement(
 						"p",
-						null,
+						{ className: "ResumeFont" },
 						"Java"
 					)
 				),
@@ -26659,7 +26683,7 @@ var LanguageList = (function (_Component) {
 					null,
 					_react2["default"].createElement(
 						"p",
-						null,
+						{ className: "ResumeFont" },
 						"Javascript"
 					)
 				),
@@ -26668,7 +26692,7 @@ var LanguageList = (function (_Component) {
 					null,
 					_react2["default"].createElement(
 						"p",
-						null,
+						{ className: "ResumeFont" },
 						"C#.NET"
 					)
 				),
@@ -26677,7 +26701,7 @@ var LanguageList = (function (_Component) {
 					null,
 					_react2["default"].createElement(
 						"p",
-						null,
+						{ className: "ResumeFont" },
 						"SQL"
 					)
 				)
@@ -26884,189 +26908,217 @@ var WorkExperience = (function (_Component) {
 		value: function render() {
 			return _react2["default"].createElement(
 				"div",
-				null,
+				{ className: "WorkExperience" },
 				_react2["default"].createElement(
-					"div",
-					{ className: "page-header" },
+					"h1",
+					null,
 					_react2["default"].createElement(
-						"h1",
+						"p",
 						null,
 						"Work Experience"
 					)
 				),
 				_react2["default"].createElement(
-					"div",
-					{ className: "panel-group", id: "accordion", role: "tablist", "aria-multiselectable": "true" },
+					"a",
+					{ href: "#ISI", name: "ISI", className: "Informetric" },
 					_react2["default"].createElement(
-						"div",
-						{ className: "panel panel-default" },
+						"h4",
+						null,
 						_react2["default"].createElement(
-							"a",
-							{ role: "button", "data-toggle": "collapse", "data-parent": "#accordion", href: "#collapseOne", "aria-expanded": "true", "aria-controls": "collapseOne" },
-							_react2["default"].createElement(
-								"div",
-								{ className: "panel-heading", role: "tab", id: "headingOne" },
-								_react2["default"].createElement(
-									"h4",
-									{ className: "container panel-title" },
-									"Informetric Systems"
-								)
-							)
-						),
+							"p",
+							null,
+							"Informetric Systems"
+						)
+					)
+				),
+				_react2["default"].createElement(
+					"ul",
+					null,
+					_react2["default"].createElement(
+						"li",
+						null,
 						_react2["default"].createElement(
-							"div",
-							{ id: "collapseOne", className: "panel-collapse collapse", role: "tabpanel", "aria-labelledby": "headingOne" },
-							_react2["default"].createElement(
-								"div",
-								{ className: "panel-body" },
-								_react2["default"].createElement(
-									"ul",
-									null,
-									_react2["default"].createElement(
-										"li",
-										null,
-										"Created and maintained custom application installation kits for a strategic business partner"
-									),
-									_react2["default"].createElement(
-										"li",
-										null,
-										"Developed a database interfacing application using an internal framework that reduced the need for technical support and improved product consistency accross sites"
-									),
-									_react2["default"].createElement(
-										"li",
-										null,
-										"Helped design and develop a database interfacing application to process hundreds of gigabytes of image metadata"
-									),
-									_react2["default"].createElement(
-										"li",
-										null,
-										"Implemented application changes to the client application on as short notice as 5 days"
-									),
-									_react2["default"].createElement(
-										"li",
-										null,
-										"Refreshed product documentation for delivery to every customer and each new install"
-									),
-									_react2["default"].createElement(
-										"li",
-										null,
-										"Responsible for technical support and technical communication accross five client sites"
-									),
-									_react2["default"].createElement(
-										"li",
-										null,
-										"Handled technical support 24x7 during pager duty"
-									),
-									_react2["default"].createElement(
-										"li",
-										null,
-										"Visited client sites as a technical resource and representative of Informetric"
-									)
-								)
-							)
+							"p",
+							{ className: "ResumeFont" },
+							"Created and maintained custom application installation kits for a strategic business partner"
 						)
 					),
 					_react2["default"].createElement(
-						"div",
-						{ className: "panel panel-default" },
+						"li",
+						null,
 						_react2["default"].createElement(
-							"a",
-							{ className: "collapsed", role: "button", "data-toggle": "collapse", "data-parent": "#accordion", href: "#collapseTwo", "aria-expanded": "false", "aria-controls": "collapseTwo" },
-							_react2["default"].createElement(
-								"div",
-								{ className: "panel-heading", role: "tab", id: "headingTwo" },
-								_react2["default"].createElement(
-									"h4",
-									{ className: "container panel-title" },
-									"Campus Evolution Villages"
-								)
-							)
-						),
-						_react2["default"].createElement(
-							"div",
-							{ id: "collapseTwo", className: "panel-collapse collapse", role: "tabpanel", "aria-labelledby": "headingTwo" },
-							_react2["default"].createElement(
-								"div",
-								{ className: "panel-body" },
-								_react2["default"].createElement(
-									"ul",
-									null,
-									_react2["default"].createElement(
-										"li",
-										null,
-										"Evaluated businesses for investment potential"
-									),
-									_react2["default"].createElement(
-										"li",
-										null,
-										"Advised portfolio companies in how to best allocate their time and employees"
-									),
-									_react2["default"].createElement(
-										"li",
-										null,
-										"Compiled a database of 150 entrepreneurship program contacts at universities accross the US "
-									)
-								)
-							)
+							"p",
+							{ className: "ResumeFont" },
+							"Developed a database interfacing application using an internal framework that reduced the need for technical support and improved product consistency accross sites"
 						)
 					),
 					_react2["default"].createElement(
-						"div",
-						{ className: "panel panel-default" },
+						"li",
+						null,
 						_react2["default"].createElement(
-							"a",
-							{ className: "collapsed", role: "button", "data-toggle": "collapse", "data-parent": "#accordion", href: "#collapseThree", "aria-expanded": "false", "aria-controls": "collapseThree" },
-							_react2["default"].createElement(
-								"div",
-								{ className: "panel-heading", role: "tab", id: "headingThree" },
-								_react2["default"].createElement(
-									"h4",
-									{ className: "container panel-title" },
-									"La Buena Onda"
-								)
-							)
-						),
+							"p",
+							{ className: "ResumeFont" },
+							"Helped design and develop a database interfacing application to process hundreds of gigabytes of image metadata"
+						)
+					),
+					_react2["default"].createElement(
+						"li",
+						null,
 						_react2["default"].createElement(
-							"div",
-							{ id: "collapseThree", className: "panel-collapse collapse", role: "tabpanel", "aria-labelledby": "headingThree" },
-							_react2["default"].createElement(
-								"div",
-								{ className: "panel-body" },
-								_react2["default"].createElement(
-									"ul",
-									null,
-									_react2["default"].createElement(
-										"li",
-										null,
-										"Created an accounting projection to 10 years showing the time until break even on investment"
-									),
-									_react2["default"].createElement(
-										"li",
-										null,
-										"Performed a cost analysis that showed kitchen employees were not stealing food as suspected"
-									),
-									_react2["default"].createElement(
-										"li",
-										null,
-										"Created a new website using free online tools"
-									),
-									_react2["default"].createElement(
-										"li",
-										null,
-										"Implemented a new point of service system to better manage revenues and costs"
-									),
-									_react2["default"].createElement(
-										"li",
-										null,
-										"Learned about Nicaraguan culture by meeting locals and travelers, and volunteering to help teach at a local school"
-									),
-									_react2["default"].createElement(
-										"li",
-										null,
-										"Perfected Spanish business skills"
-									)
-								)
-							)
+							"p",
+							{ className: "ResumeFont" },
+							"Implemented application changes to the client application on as short notice as 5 days"
+						)
+					),
+					_react2["default"].createElement(
+						"li",
+						null,
+						_react2["default"].createElement(
+							"p",
+							{ className: "ResumeFont" },
+							"Refreshed product documentation for delivery to every customer and each new install"
+						)
+					),
+					_react2["default"].createElement(
+						"li",
+						null,
+						_react2["default"].createElement(
+							"p",
+							{ className: "ResumeFont" },
+							"Responsible for technical support and technical communication accross five client sites"
+						)
+					),
+					_react2["default"].createElement(
+						"li",
+						null,
+						_react2["default"].createElement(
+							"p",
+							{ className: "ResumeFont" },
+							"Handled technical support 24x7 during pager duty"
+						)
+					),
+					_react2["default"].createElement(
+						"li",
+						null,
+						_react2["default"].createElement(
+							"p",
+							{ className: "ResumeFont" },
+							"Visited client sites as a technical resource and representative of Informetric"
+						)
+					)
+				),
+				_react2["default"].createElement(
+					"a",
+					{ href: "#CEV", name: "CEV", className: "Campus" },
+					_react2["default"].createElement(
+						"h4",
+						null,
+						_react2["default"].createElement(
+							"p",
+							null,
+							"Campus Evolution Villages"
+						)
+					)
+				),
+				_react2["default"].createElement(
+					"ul",
+					null,
+					_react2["default"].createElement(
+						"li",
+						null,
+						_react2["default"].createElement(
+							"p",
+							{ className: "ResumeFont" },
+							"Evaluated businesses for investment potential"
+						)
+					),
+					_react2["default"].createElement(
+						"li",
+						null,
+						_react2["default"].createElement(
+							"p",
+							{ className: "ResumeFont" },
+							"Advised portfolio companies in how to best allocate their time and employees"
+						)
+					),
+					_react2["default"].createElement(
+						"li",
+						null,
+						_react2["default"].createElement(
+							"p",
+							{ className: "ResumeFont" },
+							"Compiled a database of 150 entrepreneurship program contacts at universities accross the US "
+						)
+					)
+				),
+				_react2["default"].createElement(
+					"a",
+					{ href: "#LBO", name: "LBO", className: "BuenaOnda" },
+					_react2["default"].createElement(
+						"h4",
+						null,
+						_react2["default"].createElement(
+							"p",
+							null,
+							"La Buena Onda"
+						)
+					)
+				),
+				_react2["default"].createElement(
+					"ul",
+					null,
+					_react2["default"].createElement(
+						"li",
+						null,
+						_react2["default"].createElement(
+							"p",
+							{ className: "ResumeFont" },
+							"Created an accounting projection to 10 years showing the time until break even on investment"
+						)
+					),
+					_react2["default"].createElement(
+						"li",
+						null,
+						_react2["default"].createElement(
+							"p",
+							{ className: "ResumeFont" },
+							"Performed a cost analysis that showed kitchen employees were not stealing food as suspected"
+						)
+					),
+					_react2["default"].createElement(
+						"li",
+						null,
+						_react2["default"].createElement(
+							"p",
+							{ className: "ResumeFont" },
+							"Created a new website using free online tools"
+						)
+					),
+					_react2["default"].createElement(
+						"li",
+						null,
+						_react2["default"].createElement(
+							"p",
+							{ className: "ResumeFont" },
+							"Implemented a new point of service system to better manage revenues and costs"
+						)
+					),
+					_react2["default"].createElement(
+						"li",
+						null,
+						_react2["default"].createElement(
+							"p",
+							{ className: "ResumeFont" },
+							"Learned about Nicaraguan culture by meeting locals and travelers, and volunteering to help teach at a local school"
+						)
+					),
+					_react2["default"].createElement(
+						"li",
+						null,
+						_react2["default"].createElement(
+							"p",
+							{ className: "ResumeFont" },
+							"Perfected Spanish business skills"
 						)
 					)
 				)
