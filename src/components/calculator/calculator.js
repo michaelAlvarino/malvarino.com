@@ -45,13 +45,11 @@ export default class Calculator extends Component{
 						<div>
 							<p className="calculatorHandle">Calculator</p>
 						</div>
-						<form className="navbar-form navbar-left" onSubmit={this.handleSubmit.bind(this)} role="search">
-							<div className="form-group">
+						<form onSubmit={this.handleSubmit.bind(this)}>
 								<input type="text"
                    					onChange={this.handleChange.bind(this)}
                    					value={this.state.calculator}
                    					className="form-control" placeholder="Search"></input>
-							</div>
 							<button type="submit" className="btn btn-default">Submit</button>
 						</form>
 					</div>

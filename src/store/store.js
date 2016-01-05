@@ -1,7 +1,6 @@
 import Dispatcho from '../dispatcher/dispatcher'
 import EventEmitter from 'events'
 import Constants from '../constants/constants'
-import Bst from '../dataStructures/bst'
 
 const CHANGE_EVENT = "change";
 
@@ -13,7 +12,7 @@ class StoreCls extends EventEmitter {
 			calculator: null
 		};
 	}
-	
+
 	getData(){
 		return this.data;
 	}
@@ -36,7 +35,9 @@ const Store = new StoreCls();
 Store.dispatchToken = Dispatcho.register((payload) => {
 	switch(payload.actionType){
 		case Constants.CALCULATE:
-			calculate(payload.item);
+			// console.log("debug: " + payload.item);
+			Store.data.calculator = eval(payload.item);
+			// console.log(Store.data.calculator);
 			Store.emitChange();
 			break;
 		default:
@@ -44,10 +45,4 @@ Store.dispatchToken = Dispatcho.register((payload) => {
 	}
 });
 
-function calculate(str){
-	let bst = new Bst();
-	bst.parse(str);
-}
-
 export default Store;
-

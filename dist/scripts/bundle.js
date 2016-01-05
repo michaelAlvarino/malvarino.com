@@ -25820,15 +25820,11 @@ var Calculator = (function (_Component) {
 						),
 						_react2['default'].createElement(
 							'form',
-							{ className: 'navbar-form navbar-left', onSubmit: this.handleSubmit.bind(this), role: 'search' },
-							_react2['default'].createElement(
-								'div',
-								{ className: 'form-group' },
-								_react2['default'].createElement('input', { type: 'text',
-									onChange: this.handleChange.bind(this),
-									value: this.state.calculator,
-									className: 'form-control', placeholder: 'Search' })
-							),
+							{ onSubmit: this.handleSubmit.bind(this) },
+							_react2['default'].createElement('input', { type: 'text',
+								onChange: this.handleChange.bind(this),
+								value: this.state.calculator,
+								className: 'form-control', placeholder: 'Search' }),
 							_react2['default'].createElement(
 								'button',
 								{ type: 'submit', className: 'btn btn-default' },
@@ -27310,48 +27306,61 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var trainShunting = {
+	isReallyNaN: function isReallyNaN(x) {
+		return x !== x;
+	},
+	hashCode: function hashCode(x) {
+		var hash = 0,
+		    i,
+		    chr,
+		    len;
+		if (x.length === 0) return hash;
+		for (i = 0, len = x.length; i < len; i++) {
+			chr = x.charCodeAt(i);
+			hash = (hash << 5) - hash + chr;
+			hash |= 0; // Convert to 32bit integer
+		}
+		return hash;
+	},
+	toPreFix: function toPreFix(str) {
+		var _this = this;
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Bst = (function () {
-	function Bst(expression) {
-		_classCallCheck(this, Bst);
-
-		this.operation = [];
-		this.values = [];
-		this.output = [];
+		// algo: https://en.wikipedia.org/wiki/Shunting-yard_algorithm
+		var output = [],
+		    stack = [];
+		// take out the digits and operators then use the train shunting algo
+		str.match(/\d+\.+\d+|\d+|[+\*\-()]/g).map(function (val) {
+			if (val != "undefined") {
+				var _isNaN = _this.isReallyNaN(parseFloat(val));
+				// console.log(val); console.log(this.hashCode(val));
+				var isOperator = val === "+" || val === "-" || val === "/" || val === "*";
+				// push numbers to the output stack
+				if (!_isNaN) {
+					output.push(val);
+				} else if (_isNaN && isOperator) {
+					// if it's an operator of "equal precedence"
+					// if it's + or -
+					var topOfStack = output[output.length - 1];
+					if (val === ")") {
+						while (topOfStack != "(") {
+							output.push(stack.pop());
+							topOfStack = output[output.length - 1];
+						}
+					} else if ((val === "+" || val === "-") && (topOfStack === "+" || topOfStack === "-") || (val === "*" || val === "/") && (topOfStack === "/" || topOfStack === "*")) {
+						output.push(stack.pop());
+						output.push(val);
+					}
+					stack.push(val);
+					// when we encounter a paren...
+				} else if (hashCode(val) === hashCode("(")) {}
+			}
+		});
 	}
 
-	_createClass(Bst, [{
-		key: "parse",
-		value: function parse(str) {
-			// easier to treat these arrays like queues than to reverse them?
-			this.values = str.match(/(?:\d*\.)?\d+/g).map(function (val) {
-				return val.trim();
-			});
-			this.operations = str.match(/[()+\-/*]/g).map(function (op) {
-				return op.trim();
-			});
-			console.log(this.values);
-			console.log(this.operations);
-			this.calc(this.operations, this.values);
-		}
-	}, {
-		key: "calc",
-		value: function calc(ops, vals) {
-			while (!ops.isEmpty() && !vals.isEmpty()) {
-				this.output.push(ops.shift());
-				this.output.push(vals.shift());
-			}
-			console.log(this.output);
-		}
-	}]);
+};
 
-	return Bst;
-})();
-
-exports["default"] = Bst;
+exports["default"] = trainShunting;
 module.exports = exports["default"];
 
 },{}],232:[function(require,module,exports){
@@ -27419,6 +27428,14 @@ var _componentsCalculatorCalculator = require('./components/calculator/calculato
 
 var _componentsCalculatorCalculator2 = _interopRequireDefault(_componentsCalculatorCalculator);
 
+//
+
+var _dataStructuresTrainShunting = require('./dataStructures/trainShunting');
+
+var _dataStructuresTrainShunting2 = _interopRequireDefault(_dataStructuresTrainShunting);
+
+window.train = _dataStructuresTrainShunting2['default'];
+
 (0, _reactDom.render)(_react2['default'].createElement(
   _reactRouter.Router,
   { history: (0, _historyLibCreateBrowserHistory2['default'])() },
@@ -27434,7 +27451,7 @@ Array.prototype.isEmpty = function () {
   return !(this.length > 0);
 };
 
-},{"./components/calculator/calculator":215,"./components/home":216,"./components/noMatch":218,"./components/resume/resume":226,"./components/rqms/draggableGraph":228,"history/lib/createBrowserHistory":11,"react":212,"react-dom":31,"react-router":52}],234:[function(require,module,exports){
+},{"./components/calculator/calculator":215,"./components/home":216,"./components/noMatch":218,"./components/resume/resume":226,"./components/rqms/draggableGraph":228,"./dataStructures/trainShunting":231,"history/lib/createBrowserHistory":11,"react":212,"react-dom":31,"react-router":52}],234:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -27462,10 +27479,6 @@ var _events2 = _interopRequireDefault(_events);
 var _constantsConstants = require('../constants/constants');
 
 var _constantsConstants2 = _interopRequireDefault(_constantsConstants);
-
-var _dataStructuresBst = require('../dataStructures/bst');
-
-var _dataStructuresBst2 = _interopRequireDefault(_dataStructuresBst);
 
 var CHANGE_EVENT = "change";
 
@@ -27511,7 +27524,9 @@ var Store = new StoreCls();
 Store.dispatchToken = _dispatcherDispatcher2['default'].register(function (payload) {
 	switch (payload.actionType) {
 		case _constantsConstants2['default'].CALCULATE:
-			calculate(payload.item);
+			// console.log("debug: " + payload.item);
+			Store.data.calculator = eval(payload.item);
+			// console.log(Store.data.calculator);
 			Store.emitChange();
 			break;
 		default:
@@ -27519,12 +27534,7 @@ Store.dispatchToken = _dispatcherDispatcher2['default'].register(function (paylo
 	}
 });
 
-function calculate(str) {
-	var bst = new _dataStructuresBst2['default']();
-	bst.parse(str);
-}
-
 exports['default'] = Store;
 module.exports = exports['default'];
 
-},{"../constants/constants":230,"../dataStructures/bst":231,"../dispatcher/dispatcher":232,"events":1}]},{},[233]);
+},{"../constants/constants":230,"../dispatcher/dispatcher":232,"events":1}]},{},[233]);

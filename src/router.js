@@ -11,6 +11,11 @@ import DraggableGraph from './components/rqms/draggableGraph';
 import Home from './components/home';
 import Calculator from './components/calculator/calculator';
 
+//
+import trainShunting from './dataStructures/trainShunting';
+
+window.train = trainShunting;
+
 render((
   <Router history={createBrowserHistory()}>
     <Route path="/" component={ Home }/>
