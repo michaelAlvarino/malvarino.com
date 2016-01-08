@@ -126,8 +126,10 @@ ul.homepage {
 .calculator {
   position: relative;
   background-color: #CB0077;
-  width: 200px;
+  width: 350px;
   border: solid 2px grey;
-  border-radius: 2px;
+  border-radius: 5px;
   padding: 2px;
   left: 30%; }
+  .calculator input {
+    margin-right: 10px; }

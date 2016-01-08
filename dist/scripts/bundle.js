@@ -27330,35 +27330,48 @@ var trainShunting = {
 		var output = [],
 		    stack = [];
 		// take out the digits and operators then use the train shunting algo
-		str.match(/\d+\.+\d+|\d+|[+\*\-()]/g).map(function (val) {
+		str.match(/\d+\.+\d+|\d+|[\^+\*\-()/]/g).map(function (val) {
+			console.log("output");
+			console.log(output);
+			console.log("stack");
+			console.log(stack);
 			if (val != "undefined") {
 				var _isNaN = _this.isReallyNaN(parseFloat(val));
 				// console.log(val); console.log(this.hashCode(val));
-				var isOperator = val === "+" || val === "-" || val === "/" || val === "*";
+				var isOperator = val === "+" || val === "-" || val === "/" || val === "*" || val === "(" || val === ")" || val === "^";
 				// push numbers to the output stack
-				if (!_isNaN) {
+				if (!_isNaN && !isOperator) {
 					output.push(val);
 				} else if (_isNaN && isOperator) {
-					// if it's an operator of "equal precedence"
-					// if it's + or -
-					var topOfStack = output[output.length - 1];
+					// if we're at an operator
+					var topOfStack = stack[stack.length - 1];
+					// at parenthases, we push everything from the stack to the output queue
 					if (val === ")") {
 						while (topOfStack != "(") {
 							output.push(stack.pop());
-							topOfStack = output[output.length - 1];
+							topOfStack = stack[stack.length - 1];
 						}
-					} else if ((val === "+" || val === "-") && (topOfStack === "+" || topOfStack === "-") || (val === "*" || val === "/") && (topOfStack === "/" || topOfStack === "*")) {
-						output.push(stack.pop());
-						output.push(val);
-					}
-					stack.push(val);
-					// when we encounter a paren...
-				} else if (hashCode(val) === hashCode("(")) {}
+						// get rid of trailing paren from the stack
+						stack.pop();
+						// dealing with left associative operators
+					} else if ((val === "+" || val === "-") && (topOfStack === "*" || topOfStack === "/") || (val === "*" || val === "/") && (topOfStack === "/" || topOfStack === "*") || val === "^" && topOfStack != "^" && topOfStack != "(" && topOfStack != ")" // just added && topOfStack
+						) {
+								output.push(stack.pop());
+								stack.push(val);
+							} else {
+							stack.push(val);
+						}
+				}
 			}
 		});
+		while (stack.length > 0) {
+			output.push(stack.pop());
+		}
+		return output;
 	}
 
 };
+// 3 + 4 * 2 / ( 1 - 5 ) ^ 2 ^ 3
 
 exports["default"] = trainShunting;
 module.exports = exports["default"];
@@ -27480,6 +27493,10 @@ var _constantsConstants = require('../constants/constants');
 
 var _constantsConstants2 = _interopRequireDefault(_constantsConstants);
 
+var _dataStructuresTrainShunting = require('../dataStructures/trainShunting');
+
+var _dataStructuresTrainShunting2 = _interopRequireDefault(_dataStructuresTrainShunting);
+
 var CHANGE_EVENT = "change";
 
 var StoreCls = (function (_EventEmitter) {
@@ -27525,6 +27542,7 @@ Store.dispatchToken = _dispatcherDispatcher2['default'].register(function (paylo
 	switch (payload.actionType) {
 		case _constantsConstants2['default'].CALCULATE:
 			// console.log("debug: " + payload.item);
+			console.log(_dataStructuresTrainShunting2['default'].toPreFix(payload.item));
 			Store.data.calculator = eval(payload.item);
 			// console.log(Store.data.calculator);
 			Store.emitChange();
@@ -27537,4 +27555,4 @@ Store.dispatchToken = _dispatcherDispatcher2['default'].register(function (paylo
 exports['default'] = Store;
 module.exports = exports['default'];
 
-},{"../constants/constants":230,"../dispatcher/dispatcher":232,"events":1}]},{},[233]);
+},{"../constants/constants":230,"../dataStructures/trainShunting":231,"../dispatcher/dispatcher":232,"events":1}]},{},[233]);

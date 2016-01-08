@@ -17,39 +17,50 @@ var trainShunting = {
 		// algo: https://en.wikipedia.org/wiki/Shunting-yard_algorithm
 		var output = [], stack = [];
 			// take out the digits and operators then use the train shunting algo
-			str.match(/\d+\.+\d+|\d+|[+\*\-()]/g).map((val) => {
+			str.match(/\d+\.+\d+|\d+|[\^+\*\-()/]/g).map((val) => {
+				console.log("output");
+				console.log(output);
+				console.log("stack");
+				console.log(stack);
 				if(val != "undefined"){
 					let isNaN = this.isReallyNaN(parseFloat(val));
 					// console.log(val); console.log(this.hashCode(val));
-					var isOperator = (val === "+" || val === "-" || val === "/" || val === "*");
+					var isOperator = (val === "+" || val === "-" || val === "/" || val === "*" || val === "(" || val === ")" || val === "^");
 					// push numbers to the output stack
-					if(!isNaN){
+					if(!isNaN && !isOperator){
 						output.push(val);
 					} else if(isNaN && isOperator) {
-						// if it's an operator of "equal precedence"
-						// if it's + or -
-						let topOfStack = output[output.length-1];
+						// if we're at an operator
+						let topOfStack = stack[stack.length-1];
+						// at parenthases, we push everything from the stack to the output queue
 						if(val === ")"){
 							while(topOfStack != "("){
 								output.push(stack.pop());
-								topOfStack = output[output.length-1];
+								topOfStack = stack[stack.length-1];
 							}
+							// get rid of trailing paren from the stack
+							stack.pop();
+						// dealing with left associative operators
 						} else if(
-							((val === "+" || val === "-") && (topOfStack === "+" || topOfStack === "-"))
+							((val === "+" || val === "-") && (topOfStack === "*" || topOfStack === "/"))
 							|| ((val === "*" || val === "/") && (topOfStack === "/" || topOfStack === "*"))
+							|| (val === "^" && topOfStack != "^" && topOfStack != "(" && topOfStack != ")")// just added && topOfStack
 						){
 							output.push(stack.pop());
-							output.push(val);
+							stack.push(val);
+						} else {
+							stack.push(val);
 						}
-						stack.push(val);
-					// when we encounter a paren...
-				} else if(hashCode(val) === hashCode("(")) {
-
 				}
 			}
 		});
+		while(stack.length > 0){
+			output.push(stack.pop());
+		}
+		return output;
 	}
 
 }
+// 3 + 4 * 2 / ( 1 - 5 ) ^ 2 ^ 3
 
 export default trainShunting;

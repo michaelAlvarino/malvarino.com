@@ -1,6 +1,7 @@
 import Dispatcho from '../dispatcher/dispatcher'
 import EventEmitter from 'events'
 import Constants from '../constants/constants'
+import trainShunting from '../dataStructures/trainShunting'
 
 const CHANGE_EVENT = "change";
 
@@ -36,6 +37,7 @@ Store.dispatchToken = Dispatcho.register((payload) => {
 	switch(payload.actionType){
 		case Constants.CALCULATE:
 			// console.log("debug: " + payload.item);
+			console.log(trainShunting.toPreFix(payload.item));
 			Store.data.calculator = eval(payload.item);
 			// console.log(Store.data.calculator);
 			Store.emitChange();
