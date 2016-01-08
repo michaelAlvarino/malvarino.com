@@ -27323,51 +27323,60 @@ var trainShunting = {
 		}
 		return hash;
 	},
+	eval: function _eval(str) {
+		str.map(function (val) {});
+	},
 	toPreFix: function toPreFix(str) {
 		var _this = this;
 
 		// algo: https://en.wikipedia.org/wiki/Shunting-yard_algorithm
-		var output = [],
-		    stack = [];
+		var prefixQueue = [],
+		    operatorStack = [],
+		    timeOperatorStack = [],
+		    prefixQueueStack = [],
+		    ret = {},
+		    vals = [];
 		// take out the digits and operators then use the train shunting algo
+		// for each value in the string, I'm running the function... basically running it N times
+
 		str.match(/\d+\.+\d+|\d+|[\^+\*\-()/]/g).map(function (val) {
-			console.log("output");
-			console.log(output);
-			console.log("stack");
-			console.log(stack);
+			console.log(val);
 			if (val != "undefined") {
 				var _isNaN = _this.isReallyNaN(parseFloat(val));
 				// console.log(val); console.log(this.hashCode(val));
 				var isOperator = val === "+" || val === "-" || val === "/" || val === "*" || val === "(" || val === ")" || val === "^";
-				// push numbers to the output stack
+				// push numbers to the prefixQueue
 				if (!_isNaN && !isOperator) {
-					output.push(val);
+					prefixQueue.push(val);
 				} else if (_isNaN && isOperator) {
 					// if we're at an operator
-					var topOfStack = stack[stack.length - 1];
-					// at parenthases, we push everything from the stack to the output queue
+					var nextOperator = operatorStack[operatorStack.length - 1];
+					// at parenthases, we push everything from the operatorStack to the prefixQueue
 					if (val === ")") {
-						while (topOfStack != "(") {
-							output.push(stack.pop());
-							topOfStack = stack[stack.length - 1];
+						while (nextOperator != "(") {
+							prefixQueue.push(operatorStack.pop());
+							nextOperator = operatorStack[operatorStack.length - 1];
 						}
-						// get rid of trailing paren from the stack
-						stack.pop();
+						// get rid of trailing paren from the operatorStack
+						operatorStack.pop();
 						// dealing with left associative operators
-					} else if ((val === "+" || val === "-") && (topOfStack === "*" || topOfStack === "/") || (val === "*" || val === "/") && (topOfStack === "/" || topOfStack === "*") || val === "^" && topOfStack != "^" && topOfStack != "(" && topOfStack != ")" // just added && topOfStack
-						) {
-								output.push(stack.pop());
-								stack.push(val);
-							} else {
-							stack.push(val);
+					} else if ((val === "+" || val === "-") && (nextOperator === "*" || nextOperator === "/") || (val === "*" || val === "/") && (nextOperator === "/" || nextOperator === "*")) {
+							prefixQueue.push(operatorStack.pop());
+							operatorStack.push(val);
+						} else {
+							operatorStack.push(val);
 						}
 				}
+				prefixQueueStack.push(Array.from(prefixQueue));
+				timeOperatorStack.push(Array.from(operatorStack));
 			}
 		});
-		while (stack.length > 0) {
-			output.push(stack.pop());
+		while (operatorStack.length > 0) {
+			prefixQueue.push(operatorStack.pop());
 		}
-		return output;
+		timeOperatorStack.push(Array.from(operatorStack));
+		ret = { prefixQueue: prefixQueue, operators: timeOperatorStack, prefixes: prefixQueueStack };
+		return ret;
 	}
 
 };
