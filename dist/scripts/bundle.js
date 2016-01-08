@@ -27323,8 +27323,22 @@ var trainShunting = {
 		}
 		return hash;
 	},
-	eval: function _eval(str) {
-		str.map(function (val) {});
+	evaluate: function evaluate(str) {
+		var val = 0;
+		var stack = [];
+		var left, right;
+		while (str.length > 0) {
+			val = str.shift();
+			var isOperator = val === "+" || val === "-" || val === "/" || val === "*" || val === "(" || val === ")" || val === "^";
+			if (isOperator) {
+				right = stack.pop();
+				left = stack.pop();
+				str.unshift(eval(String.concat(left, val, right)));
+			} else {
+				if (str.length === 0) return val;
+				stack.push(val);
+			}
+		}
 	},
 	toPreFix: function toPreFix(str) {
 		var _this = this;
@@ -27340,7 +27354,6 @@ var trainShunting = {
 		// for each value in the string, I'm running the function... basically running it N times
 
 		str.match(/\d+\.+\d+|\d+|[\^+\*\-()/]/g).map(function (val) {
-			console.log(val);
 			if (val != "undefined") {
 				var _isNaN = _this.isReallyNaN(parseFloat(val));
 				// console.log(val); console.log(this.hashCode(val));

@@ -13,10 +13,23 @@ var trainShunting = {
 		}
 		return hash;
 	},
-	eval: function(str){
-		str.map((val) =>{
-
-		});
+	evaluate: function(str){
+		var val = 0;
+		var stack = [];
+		var left, right;
+		while(str.length > 0){
+			val = str.shift();
+			let isOperator = (val === "+" || val === "-" || val === "/" || val === "*" || val === "(" || val === ")" || val === "^");
+			if(isOperator){
+				right = stack.pop();
+				left = stack.pop();
+				str.unshift(eval(String.concat(left,val,right)));
+			} else {
+				if(str.length === 0)
+					return val;
+				stack.push(val);
+			}
+		}
 	},
 	toPreFix: function(str){
 		// algo: https://en.wikipedia.org/wiki/Shunting-yard_algorithm
@@ -25,11 +38,10 @@ var trainShunting = {
 			// for each value in the string, I'm running the function... basically running it N times
 
 			str.match(/\d+\.+\d+|\d+|[\^+\*\-()/]/g).map((val) => {
-				console.log(val);
 				if(val != "undefined"){
 					let isNaN = this.isReallyNaN(parseFloat(val));
 					// console.log(val); console.log(this.hashCode(val));
-					var isOperator = (val === "+" || val === "-" || val === "/" || val === "*" || val === "(" || val === ")" || val === "^");
+					let isOperator = (val === "+" || val === "-" || val === "/" || val === "*" || val === "(" || val === ")" || val === "^");
 					// push numbers to the prefixQueue
 					if(!isNaN && !isOperator){
 						prefixQueue.push(val);
