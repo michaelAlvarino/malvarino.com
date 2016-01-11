@@ -25770,10 +25770,6 @@ var Calculator = (function (_Component) {
 	_createClass(Calculator, [{
 		key: 'handleChange',
 		value: function handleChange(event) {
-			// only handle the change if it exists
-			// without this conditional, handlechange is called when handleSubmit changes
-			// the value attribute of our input field. this could normally be resolved by
-			// displaying the result somewhere other than the input field...
 			if (!!event) {
 				this.setState({ calculator: event.target.value });
 			};
@@ -25798,38 +25794,16 @@ var Calculator = (function (_Component) {
 				null,
 				_react2['default'].createElement(_homeHomeButton2['default'], null),
 				_react2['default'].createElement(
-					_reactDraggable2['default'],
-					{
-						handle: '.calculatorHandle',
-						axis: 'both',
-						start: { x: 0, y: 0 },
-						moveOnStartChange: false,
-						grid: [25, 25],
-						zIndex: 100 },
+					'div',
+					{ className: 'Calculator' },
 					_react2['default'].createElement(
-						'div',
-						{ className: 'calculator' },
+						'form',
+						{ onSubmit: this.handleSubmit.bind(this) },
+						_react2['default'].createElement('input', { type: 'text', onChange: this.handleChange.bind(this), value: this.state.calculator, placeholder: 'Expression' }),
 						_react2['default'].createElement(
-							'div',
-							null,
-							_react2['default'].createElement(
-								'p',
-								{ className: 'calculatorHandle' },
-								'Calculator'
-							)
-						),
-						_react2['default'].createElement(
-							'form',
-							{ onSubmit: this.handleSubmit.bind(this) },
-							_react2['default'].createElement('input', { type: 'text',
-								onChange: this.handleChange.bind(this),
-								value: this.state.calculator,
-								className: 'form-control', placeholder: 'Search' }),
-							_react2['default'].createElement(
-								'button',
-								{ type: 'submit', className: 'btn btn-default' },
-								'Submit'
-							)
+							'button',
+							{ type: 'submit' },
+							'Calculate'
 						)
 					)
 				)
@@ -25886,11 +25860,11 @@ var Home = (function (_Component) {
 		value: function render() {
 			return _react2['default'].createElement(
 				'div',
-				null,
+				{ className: 'Home' },
 				_react2['default'].createElement(_homeHomeButton2['default'], null),
 				_react2['default'].createElement(
 					'ul',
-					{ className: 'homepage' },
+					{ className: 'row' },
 					_react2['default'].createElement(
 						'li',
 						{ className: 'clickcube' },
@@ -25920,7 +25894,7 @@ var Home = (function (_Component) {
 				),
 				_react2['default'].createElement(
 					'ul',
-					{ className: 'homepage' },
+					{ className: 'row' },
 					_react2['default'].createElement(
 						'li',
 						{ className: 'clickcube' },

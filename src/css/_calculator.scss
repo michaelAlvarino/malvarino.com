@@ -1,12 +1,15 @@
-.calculator{
-	position: relative;
-	background-color: $background-color;
-	width: 350px;
-	border: solid 2px grey;
-	border-radius: 5px;
-	padding: 2px;
-	left: 30%;
-	input{
-		margin-right: 10px;
+.Calculator{
+	width: 100%;
+	form{
+		margin-left: 40%;
+		input{
+			margin-right: 8px;
+			border-radius: 5px;
+			padding: 3px;
+		}
+		button{
+			border-radius: 5px;
+			padding: 3px;
+		}
 	}
 }

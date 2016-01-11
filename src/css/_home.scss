@@ -1,30 +1,37 @@
-ul.homepage{
+
+ul.row{
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	margin-top: 20px;
 	flex-wrap: wrap;
+	margin-top: 50px;
 	margin-left: 20%;
 	margin-right: 20%;
 	padding: 0px;
-}
-.clickcube{	
-	width: 40%;
-	list-style-type: none;
-	background: #009B95;
-	border-radius: 2px;
-	margin: 5px;
-	text-align: center;
-	transition: width 0.5s;
-	&:hover{
-		width: 50%;
-	}
-	a{
-		width: 100%;
-		height: 100%;
-		text-decoration: none;
-		p{
-			color: #FFE363;
+	.clickcube{
+		list-style-type: none;
+		margin-left: 20px;
+		margin-right:20px;
+		a{
+			text-decoration: none;
+			p{
+				white-space:nowrap;
+				background-color: #009B95;
+				border-radius: 5px;
+				color: #FFE363;
+				width: 350px;
+				height: 200px;
+				line-height: 200px;
+				border: 1px solid black;
+				text-align: center;
+				vertical-align: middle;
+				transition: height 0.5s, line-height 0.5s;
+				&:hover{
+					line-height: 300px;
+					height: 300px;
+				}
+			}
 		}
 	}
 }
