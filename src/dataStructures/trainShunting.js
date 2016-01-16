@@ -2,7 +2,7 @@
 var trainShunting = {
 	isReallyNaN: function(x){
 		return x!==x;
-	},
+	},// do I really need a hashCode function
 	hashCode: function(x){
 		var hash = 0, i, chr, len;
 		if (x.length === 0) return hash;
@@ -18,12 +18,12 @@ var trainShunting = {
 		var stack = [];
 		var left, right;
 		while(str.length > 0){
-			val = str.shift();
+			val = str.shift().toString();
 			let isOperator = (val === "+" || val === "-" || val === "/" || val === "*" || val === "(" || val === ")" || val === "^");
 			if(isOperator){
-				right = stack.pop();
-				left = stack.pop();
-				str.unshift(eval(String.concat(left,val,right)));
+				right = stack.pop().toString();
+				left = stack.pop().toString();
+				str.unshift(eval(left.concat(val).concat(right)));
 			} else {
 				if(str.length === 0)
 					return val;
@@ -76,6 +76,11 @@ var trainShunting = {
 		}
 		timeOperatorStack.push(Array.from(operatorStack));
 		ret = {prefixQueue: prefixQueue, operators: timeOperatorStack, prefixes: prefixQueueStack }
+		return ret;
+	},
+	calculate: function(val){
+		let ret = this.toPreFix(val);
+		ret.solution = this.evaluate(Array.from(ret.prefixQueue));
 		return ret;
 	}
 

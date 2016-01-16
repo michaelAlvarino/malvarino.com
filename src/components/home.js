@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Router, Route, Link} from 'react-router';
 import HomeButton from './home/homeButton';
+import Store from '../store/reduxStore';
 
 export default class Home extends Component{
 	render(){
