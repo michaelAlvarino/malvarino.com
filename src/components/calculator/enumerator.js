@@ -4,11 +4,14 @@ export default class Enumerator extends Component{
 	constructor(props){
 		super(props);
 		this.state = { arrays: props.toEnumerate,
-		 	classProp: props.classProp};
+		 	classProp: props.classProp,
+			header: props.header
+		};
 	}
   componentWillReceiveProps(nextProps){
     this.setState({ arrays: nextProps.toEnumerate,
-		 	classProp: nextProps.classProp
+		 	classProp: nextProps.classProp,
+			header: nextProps.header
 		});
   }
 	render(){
@@ -24,6 +27,7 @@ export default class Enumerator extends Component{
 		});
 		return(
 			<div className={this.state.classProp}>
+				<p><span>{this.state.header}</span></p>
 				{rows}
 			</div>
 		);

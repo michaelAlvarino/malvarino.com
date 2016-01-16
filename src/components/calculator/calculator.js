@@ -45,10 +45,10 @@ export default class Calculator extends Component{
 		        <button type="submit">Calculate</button>
 					</form>
 					<div className="enumerations">
-						<Enumerator classProp="stepEnumerator" toEnumerate={stepnumber} />
-						<Enumerator classProp="prefixEnumerator" toEnumerate={this.state.prefixes} />
-						<Enumerator classProp="operatorsEnumerator" toEnumerate={this.state.operators} />
-						<Enumerator classProp="prefixQueueEnumerator" toEnumerate={this.state.prefixQueue} />
+						<Enumerator header="Step Number" classProp="stepEnumerator" toEnumerate={stepnumber} />
+						<Enumerator header="Output Stack" classProp="prefixEnumerator" toEnumerate={this.state.prefixes} />
+						<Enumerator header="Operator Stack" classProp="operatorsEnumerator" toEnumerate={this.state.operators} />
+						<Enumerator header="Prefix Queue" classProp="prefixQueueEnumerator" toEnumerate={this.state.prefixQueue} />
 					</div>
 				</div>
 			</div>

@@ -25629,10 +25629,10 @@ var Calculator = (function (_Component) {
 					_react2['default'].createElement(
 						'div',
 						{ className: 'enumerations' },
-						_react2['default'].createElement(_enumerator2['default'], { classProp: 'stepEnumerator', toEnumerate: stepnumber }),
-						_react2['default'].createElement(_enumerator2['default'], { classProp: 'prefixEnumerator', toEnumerate: this.state.prefixes }),
-						_react2['default'].createElement(_enumerator2['default'], { classProp: 'operatorsEnumerator', toEnumerate: this.state.operators }),
-						_react2['default'].createElement(_enumerator2['default'], { classProp: 'prefixQueueEnumerator', toEnumerate: this.state.prefixQueue })
+						_react2['default'].createElement(_enumerator2['default'], { header: 'Step Number', classProp: 'stepEnumerator', toEnumerate: stepnumber }),
+						_react2['default'].createElement(_enumerator2['default'], { header: 'Output Stack', classProp: 'prefixEnumerator', toEnumerate: this.state.prefixes }),
+						_react2['default'].createElement(_enumerator2['default'], { header: 'Operator Stack', classProp: 'operatorsEnumerator', toEnumerate: this.state.operators }),
+						_react2['default'].createElement(_enumerator2['default'], { header: 'Prefix Queue', classProp: 'prefixQueueEnumerator', toEnumerate: this.state.prefixQueue })
 					)
 				)
 			);
@@ -25676,14 +25676,17 @@ var Enumerator = (function (_Component) {
 
 		_get(Object.getPrototypeOf(Enumerator.prototype), 'constructor', this).call(this, props);
 		this.state = { arrays: props.toEnumerate,
-			classProp: props.classProp };
+			classProp: props.classProp,
+			header: props.header
+		};
 	}
 
 	_createClass(Enumerator, [{
 		key: 'componentWillReceiveProps',
 		value: function componentWillReceiveProps(nextProps) {
 			this.setState({ arrays: nextProps.toEnumerate,
-				classProp: nextProps.classProp
+				classProp: nextProps.classProp,
+				header: nextProps.header
 			});
 		}
 	}, {
@@ -25703,6 +25706,15 @@ var Enumerator = (function (_Component) {
 			return _react2['default'].createElement(
 				'div',
 				{ className: this.state.classProp },
+				_react2['default'].createElement(
+					'p',
+					null,
+					_react2['default'].createElement(
+						'span',
+						null,
+						this.state.header
+					)
+				),
 				rows
 			);
 		}
