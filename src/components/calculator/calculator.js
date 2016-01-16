@@ -50,7 +50,7 @@ export default class Calculator extends Component{
 						<Enumerator header="Step" classProp="stepEnumerator" toEnumerate={stepnumber} />
 						<Enumerator header="Output Stack" classProp="prefixEnumerator" toEnumerate={this.state.prefixes} />
 						<Enumerator header="Operator Stack" classProp="operatorsEnumerator" toEnumerate={this.state.operators} />
-						<Enumerator header="Prefix Queue" classProp="prefixQueueEnumerator" toEnumerate={this.state.prefixQueue} />
+						<Enumerator header="Resulting Queue" classProp="prefixQueueEnumerator" toEnumerate={this.state.prefixQueue} />
 					</div>
 				</div>
 			</div>

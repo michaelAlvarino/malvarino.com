@@ -25637,7 +25637,7 @@ var Calculator = (function (_Component) {
 						_react2['default'].createElement(_enumerator2['default'], { header: 'Step', classProp: 'stepEnumerator', toEnumerate: stepnumber }),
 						_react2['default'].createElement(_enumerator2['default'], { header: 'Output Stack', classProp: 'prefixEnumerator', toEnumerate: this.state.prefixes }),
 						_react2['default'].createElement(_enumerator2['default'], { header: 'Operator Stack', classProp: 'operatorsEnumerator', toEnumerate: this.state.operators }),
-						_react2['default'].createElement(_enumerator2['default'], { header: 'Prefix Queue', classProp: 'prefixQueueEnumerator', toEnumerate: this.state.prefixQueue })
+						_react2['default'].createElement(_enumerator2['default'], { header: 'Resulting Queue', classProp: 'prefixQueueEnumerator', toEnumerate: this.state.prefixQueue })
 					)
 				)
 			);
