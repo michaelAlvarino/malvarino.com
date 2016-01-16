@@ -25605,6 +25605,10 @@ var Calculator = (function (_Component) {
 	}, {
 		key: 'render',
 		value: function render() {
+			var stepnumber = [];
+			for (var i = 0; i < this.state.prefixes.length; i++) {
+				stepnumber[i] = i + 1;
+			}
 			return _react2['default'].createElement(
 				'div',
 				null,
@@ -25625,6 +25629,7 @@ var Calculator = (function (_Component) {
 					_react2['default'].createElement(
 						'div',
 						{ className: 'enumerations' },
+						_react2['default'].createElement(_enumerator2['default'], { classProp: 'stepEnumerator', toEnumerate: stepnumber }),
 						_react2['default'].createElement(_enumerator2['default'], { classProp: 'prefixEnumerator', toEnumerate: this.state.prefixes }),
 						_react2['default'].createElement(_enumerator2['default'], { classProp: 'operatorsEnumerator', toEnumerate: this.state.operators }),
 						_react2['default'].createElement(_enumerator2['default'], { classProp: 'prefixQueueEnumerator', toEnumerate: this.state.prefixQueue })

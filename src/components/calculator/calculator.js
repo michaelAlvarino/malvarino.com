@@ -32,6 +32,10 @@ export default class Calculator extends Component{
 		});
 	}
 	render(){
+		let stepnumber = [];
+		for(let i = 0 ; i < this.state.prefixes.length ; i++){
+			stepnumber[i] = i + 1;
+		}
 		return(
 			<div>
 				<HomeButton/>
@@ -41,6 +45,7 @@ export default class Calculator extends Component{
 		        <button type="submit">Calculate</button>
 					</form>
 					<div className="enumerations">
+						<Enumerator classProp="stepEnumerator" toEnumerate={stepnumber} />
 						<Enumerator classProp="prefixEnumerator" toEnumerate={this.state.prefixes} />
 						<Enumerator classProp="operatorsEnumerator" toEnumerate={this.state.operators} />
 						<Enumerator classProp="prefixQueueEnumerator" toEnumerate={this.state.prefixQueue} />
