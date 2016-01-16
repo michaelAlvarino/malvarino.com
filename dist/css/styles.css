@@ -20,7 +20,7 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  color: #FFE363;
+  color: #e6e6e6;
   font-size: 40px;
   font-family: sans-serif; }
 
@@ -65,13 +65,13 @@ ul.row {
       text-decoration: none; }
       ul.row .clickcube a p {
         white-space: nowrap;
-        background-color: #009B95;
+        background-color: #CB0077;
         border-radius: 5px;
-        color: #FFE363;
+        color: #e6e6e6;
         width: 350px;
         height: 200px;
         line-height: 200px;
-        border: 1px solid black;
+        border: 1px solid #007873;
         text-align: center;
         vertical-align: middle;
         transition: height 0.5s, line-height 0.5s; }
@@ -83,7 +83,7 @@ ul.row {
   width: 400px;
   height: 400px;
   background-color: #CB0077;
-  border: .9px solid black;
+  border: 1px solid #007873;
   position: absolute;
   top: -200px;
   left: -200px;
@@ -129,24 +129,25 @@ ul.row {
       margin-top: 30px;
       font-size: 30px; }
 
+.IntermediateArrays {
+  text-align: center; }
+
 .Calculator {
   width: 100%; }
   .Calculator form {
     margin-left: 40%; }
     .Calculator form input {
-      border: 0;
+      border: 1px solid #007873;
       margin-right: 8px;
       margin-top: 70px;
       border-radius: 5px;
-      padding: 3px;
-      height: 25px; }
-    .Calculator form button {
-      border: 0;
-      border-radius: 5px;
+      font-size: 25px;
       padding: 3px; }
-
-.IntermediateArrays {
-  text-align: center; }
+    .Calculator form button {
+      border: 1px solid #007873;
+      border-radius: 5px;
+      font-size: 25px;
+      padding: 3px; }
 
 div.enumerations {
   display: flex;
@@ -156,4 +157,14 @@ div.enumerations {
     padding: 15px;
     border-right: 1px black solid; }
     div.enumerations div p span {
-      color: black; }
+      color: #262626; }
+
+div.CalculatorDescription {
+  padding: 20px;
+  margin-left: 15%;
+  width: 80%; }
+  div.CalculatorDescription p span {
+    color: #262626; }
+  div.CalculatorDescription p a {
+    text-decoration: none;
+    color: #262626; }

@@ -3,16 +3,17 @@
 	form{
 		margin-left: 40%;
 		input{
-   		border: 0;
+			border: 1px solid $secondary-color;
 			margin-right: 8px;
 			margin-top: 70px;
 			border-radius: 5px;
+			font-size: 25px;
 			padding: 3px;
-			height: 25px;
 		}
 		button{
-			border: 0;
+			border: 1px solid $secondary-color;
 			border-radius: 5px;
+			font-size: 25px;
 			padding: 3px;
 		}
 	}

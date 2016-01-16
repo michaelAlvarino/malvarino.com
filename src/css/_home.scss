@@ -17,13 +17,13 @@ ul.row{
 			text-decoration: none;
 			p{
 				white-space:nowrap;
-				background-color: #009B95;
+				background-color: $background-color;
 				border-radius: 5px;
-				color: #FFE363;
+				color: $font-color;
 				width: 350px;
 				height: 200px;
 				line-height: 200px;
-				border: 1px solid black;
+				border: 1px solid $secondary-color;
 				text-align: center;
 				vertical-align: middle;
 				transition: height 0.5s, line-height 0.5s;
