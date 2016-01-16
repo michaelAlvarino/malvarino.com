@@ -129,9 +129,6 @@ ul.row {
       margin-top: 30px;
       font-size: 30px; }
 
-.IntermediateArrays {
-  text-align: center; }
-
 .Calculator {
   width: 100%; }
   .Calculator form {
@@ -168,3 +165,6 @@ div.CalculatorDescription {
   div.CalculatorDescription p a {
     text-decoration: none;
     color: #C5A200; }
+
+div.handle {
+  color: #262626; }

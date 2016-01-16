@@ -15,7 +15,7 @@ export default class DraggableGraph extends Component{
 			   <Draggable
                 handle=".handle"
                 axis="both"
-                start={{x: 0, y: 0}}
+                start={{x: 400, y: 100}}
                 moveOnStartChange={false}
                 grid={[25, 25]}
                 zIndex={100}>
@@ -23,7 +23,7 @@ export default class DraggableGraph extends Component{
                     <div className="handle">Drag Me</div>
                     <Graph Data={this.state.Data}/>
                 </div>
-            </Draggable>	
+            </Draggable>
         </div>
         );
 	}

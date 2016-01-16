@@ -29,7 +29,11 @@ gulp.task('js', () => {
 		.pipe(source('bundle.js'))
 		.pipe(gulp.dest(config.paths.dist + '/scripts'));
 });
- 
+
+gulp.task('server', () => {
+
+})
+
 gulp.task('sass', () => {
   gulp.src(config.paths.sassSrc)
     .pipe(sass().on('error', sass.logError))
@@ -40,7 +44,7 @@ gulp.task('html', () => {
 	gulp.src(config.paths.html)
 		.pipe(gulp.dest(config.paths.dist));
 });
- 
+
 gulp.task('watch', () => {
 	gulp.watch(config.paths.sassSrc, ['sass']);
 	gulp.watch(config.paths.html, ['html']);

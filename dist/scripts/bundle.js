@@ -27145,7 +27145,7 @@ var DraggableGraph = (function (_Component) {
                     {
                         handle: '.handle',
                         axis: 'both',
-                        start: { x: 0, y: 0 },
+                        start: { x: 400, y: 100 },
                         moveOnStartChange: false,
                         grid: [25, 25],
                         zIndex: 100 },
