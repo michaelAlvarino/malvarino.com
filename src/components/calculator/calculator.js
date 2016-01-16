@@ -4,6 +4,7 @@ import calculate from '../../actions/calcActions'
 import HomeButton from '../home/homeButton'
 import CalcInput from './calcInput'
 import Enumerator from './enumerator'
+import CalculatorDescription from './calculatorDescription'
 
 /*
 * import store
@@ -44,8 +45,9 @@ export default class Calculator extends Component{
 						<CalcInput solution={this.state.solution}/>
 		        <button type="submit">Calculate</button>
 					</form>
+					<CalculatorDescription />
 					<div className="enumerations">
-						<Enumerator header="Step Number" classProp="stepEnumerator" toEnumerate={stepnumber} />
+						<Enumerator header="Step" classProp="stepEnumerator" toEnumerate={stepnumber} />
 						<Enumerator header="Output Stack" classProp="prefixEnumerator" toEnumerate={this.state.prefixes} />
 						<Enumerator header="Operator Stack" classProp="operatorsEnumerator" toEnumerate={this.state.operators} />
 						<Enumerator header="Prefix Queue" classProp="prefixQueueEnumerator" toEnumerate={this.state.prefixQueue} />

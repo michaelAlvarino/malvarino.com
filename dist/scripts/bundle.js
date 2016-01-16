@@ -25527,7 +25527,7 @@ CalcInput.propTypes = { calculator: _react2['default'].PropTypes.number };
 CalcInput.defaultProps = { calculator: 0 };
 module.exports = exports['default'];
 
-},{"../../store/reduxStore":239,"react":205}],220:[function(require,module,exports){
+},{"../../store/reduxStore":240,"react":205}],220:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -25565,6 +25565,10 @@ var _calcInput2 = _interopRequireDefault(_calcInput);
 var _enumerator = require('./enumerator');
 
 var _enumerator2 = _interopRequireDefault(_enumerator);
+
+var _calculatorDescription = require('./calculatorDescription');
+
+var _calculatorDescription2 = _interopRequireDefault(_calculatorDescription);
 
 /*
 * import store
@@ -25626,10 +25630,11 @@ var Calculator = (function (_Component) {
 							'Calculate'
 						)
 					),
+					_react2['default'].createElement(_calculatorDescription2['default'], null),
 					_react2['default'].createElement(
 						'div',
 						{ className: 'enumerations' },
-						_react2['default'].createElement(_enumerator2['default'], { header: 'Step Number', classProp: 'stepEnumerator', toEnumerate: stepnumber }),
+						_react2['default'].createElement(_enumerator2['default'], { header: 'Step', classProp: 'stepEnumerator', toEnumerate: stepnumber }),
 						_react2['default'].createElement(_enumerator2['default'], { header: 'Output Stack', classProp: 'prefixEnumerator', toEnumerate: this.state.prefixes }),
 						_react2['default'].createElement(_enumerator2['default'], { header: 'Operator Stack', classProp: 'operatorsEnumerator', toEnumerate: this.state.operators }),
 						_react2['default'].createElement(_enumerator2['default'], { header: 'Prefix Queue', classProp: 'prefixQueueEnumerator', toEnumerate: this.state.prefixQueue })
@@ -25647,7 +25652,58 @@ exports['default'] = Calculator;
 Calculator.propTypes = { solution: _react.PropTypes.number };
 module.exports = exports['default'];
 
-},{"../../actions/calcActions":218,"../../store/reduxStore":239,"../home/homeButton":223,"./calcInput":219,"./enumerator":221,"react":205,"react-router":45}],221:[function(require,module,exports){
+},{"../../actions/calcActions":218,"../../store/reduxStore":240,"../home/homeButton":224,"./calcInput":219,"./calculatorDescription":221,"./enumerator":222,"react":205,"react-router":45}],221:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var CalculatorDescription = (function (_Component) {
+  _inherits(CalculatorDescription, _Component);
+
+  function CalculatorDescription() {
+    _classCallCheck(this, CalculatorDescription);
+
+    _get(Object.getPrototypeOf(CalculatorDescription.prototype), 'constructor', this).apply(this, arguments);
+  }
+
+  _createClass(CalculatorDescription, [{
+    key: 'render',
+    value: function render() {
+      return _react2['default'].createElement(
+        'div',
+        null,
+        _react2['default'].createElement(
+          'p',
+          null,
+          'Hey there and welcome to my calculator.'
+        )
+      );
+    }
+  }]);
+
+  return CalculatorDescription;
+})(_react.Component);
+
+exports['default'] = CalculatorDescription;
+module.exports = exports['default'];
+
+},{"react":205}],222:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -25726,7 +25782,7 @@ var Enumerator = (function (_Component) {
 exports['default'] = Enumerator;
 module.exports = exports['default'];
 
-},{"react":205}],222:[function(require,module,exports){
+},{"react":205}],223:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -25843,7 +25899,7 @@ var Home = (function (_Component) {
 exports['default'] = Home;
 module.exports = exports['default'];
 
-},{"../store/reduxStore":239,"./home/homeButton":223,"react":205,"react-router":45}],223:[function(require,module,exports){
+},{"../store/reduxStore":240,"./home/homeButton":224,"react":205,"react-router":45}],224:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -25900,7 +25956,7 @@ var HomeButton = (function (_Component) {
 exports['default'] = HomeButton;
 module.exports = exports['default'];
 
-},{"react":205,"react-router":45}],224:[function(require,module,exports){
+},{"react":205,"react-router":45}],225:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -25947,7 +26003,7 @@ var NoMatch = (function (_Component) {
 exports['default'] = NoMatch;
 module.exports = exports['default'];
 
-},{"react":205}],225:[function(require,module,exports){
+},{"react":205}],226:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -26011,7 +26067,7 @@ var Contact = (function (_Component) {
 exports['default'] = Contact;
 module.exports = exports['default'];
 
-},{"react":205}],226:[function(require,module,exports){
+},{"react":205}],227:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26237,7 +26293,7 @@ var Education = (function (_Component) {
 exports["default"] = Education;
 module.exports = exports["default"];
 
-},{"react":205}],227:[function(require,module,exports){
+},{"react":205}],228:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26346,7 +26402,7 @@ var FrameworkList = (function (_Component) {
 exports["default"] = FrameworkList;
 module.exports = exports["default"];
 
-},{"react":205}],228:[function(require,module,exports){
+},{"react":205}],229:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -26406,7 +26462,7 @@ var Frameworks = (function (_Component) {
 exports['default'] = Frameworks;
 module.exports = exports['default'];
 
-},{"./frameworkList":227,"react":205}],229:[function(require,module,exports){
+},{"./frameworkList":228,"react":205}],230:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26514,7 +26570,7 @@ var Hobbies = (function (_Component) {
 exports["default"] = Hobbies;
 module.exports = exports["default"];
 
-},{"react":205}],230:[function(require,module,exports){
+},{"react":205}],231:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26596,7 +26652,7 @@ var LanguageList = (function (_Component) {
 exports["default"] = LanguageList;
 module.exports = exports["default"];
 
-},{"react":205}],231:[function(require,module,exports){
+},{"react":205}],232:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -26656,7 +26712,7 @@ var Languages = (function (_Component) {
 exports['default'] = Languages;
 module.exports = exports['default'];
 
-},{"./languageList":230,"react":205}],232:[function(require,module,exports){
+},{"./languageList":231,"react":205}],233:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -26753,7 +26809,7 @@ var Resume = (function (_Component) {
 exports['default'] = Resume;
 module.exports = exports['default'];
 
-},{"../home/homeButton":223,"./contact":225,"./education":226,"./frameworks/frameworks":228,"./hobbies":229,"./languages/languages":231,"./workExperience/workExperience":233,"react":205}],233:[function(require,module,exports){
+},{"../home/homeButton":224,"./contact":226,"./education":227,"./frameworks/frameworks":229,"./hobbies":230,"./languages/languages":232,"./workExperience/workExperience":234,"react":205}],234:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -27016,7 +27072,7 @@ WorkExperience.propTypes = { isiGlyphIconType: _react2["default"].PropTypes.stri
 WorkExperience.defaultProps = { isiGlyphIconType: "glyphicon glyphicon-chevron-down" };
 module.exports = exports["default"];
 
-},{"react":205}],234:[function(require,module,exports){
+},{"react":205}],235:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -27102,7 +27158,7 @@ DraggableGraph.defaultProps = { Data: [{
     }] };
 module.exports = exports['default'];
 
-},{"../home/homeButton":223,"./graph":235,"react":205,"react-draggable":25}],235:[function(require,module,exports){
+},{"../home/homeButton":224,"./graph":236,"react":205,"react-draggable":25}],236:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -27171,7 +27227,7 @@ Graph.propTypes = {
 };
 module.exports = exports['default'];
 
-},{"react":205}],236:[function(require,module,exports){
+},{"react":205}],237:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -27275,7 +27331,7 @@ var trainShunting = {
 exports["default"] = trainShunting;
 module.exports = exports["default"];
 
-},{}],237:[function(require,module,exports){
+},{}],238:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -27315,7 +27371,7 @@ function reducer(state, action) {
 exports['default'] = reducer;
 module.exports = exports['default'];
 
-},{"../actions/calcActions":218,"../dataStructures/trainShunting":236}],238:[function(require,module,exports){
+},{"../actions/calcActions":218,"../dataStructures/trainShunting":237}],239:[function(require,module,exports){
 // react stuff
 'use strict';
 
@@ -27386,7 +27442,7 @@ Array.prototype.isEmpty = function () {
   return !(this.length > 0);
 };
 
-},{"./components/calculator/calculator":220,"./components/home":222,"./components/noMatch":224,"./components/resume/resume":232,"./components/rqms/draggableGraph":234,"./dataStructures/trainShunting":236,"./store/reduxStore":239,"history/lib/createBrowserHistory":9,"react":205,"react-dom":24,"react-router":45,"redux-simple-router":206}],239:[function(require,module,exports){
+},{"./components/calculator/calculator":220,"./components/home":223,"./components/noMatch":225,"./components/resume/resume":233,"./components/rqms/draggableGraph":235,"./dataStructures/trainShunting":237,"./store/reduxStore":240,"history/lib/createBrowserHistory":9,"react":205,"react-dom":24,"react-router":45,"redux-simple-router":206}],240:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -27408,4 +27464,4 @@ var Store = (0, _redux.createStore)(_reducersReducers2['default']);
 exports['default'] = Store;
 module.exports = exports['default'];
 
-},{"../reducers/reducers":237,"redux":208}]},{},[238]);
+},{"../reducers/reducers":238,"redux":208}]},{},[239]);
