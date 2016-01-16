@@ -25691,16 +25691,25 @@ var CalculatorDescription = (function (_Component) {
         _react2["default"].createElement(
           "p",
           null,
-          "Hey there and welcome to my calculator. I know it seems silly, because a calculator is so simple, but mine is a little different. You see most calculators give you a solution, mine gives you the intermediate steps that computers go through to calculate expressions. What it does is go through the ",
+          "Hey there and welcome to my calculator. I know it seems silly, because a calculator is so simple, but mine is a little different. You see most calculators give you a solution, mine gives you the intermediate steps that computers go through to calculate expressions. This implements the ",
           _react2["default"].createElement(
             "a",
             { href: "https://en.wikipedia.org/wiki/Shunting-yard_algorithm" },
-            "Shutnting Yard Algorithm"
+            "Shunting Yard Algorithm"
           ),
-          " to break down an expression, then reconstruct its solution.",
+          " to break down an expression into prefix notation, then evaluate the prefix notation to find the solution.",
           _react2["default"].createElement("br", null),
           _react2["default"].createElement("br", null),
-          "If you look below I also display the intermediary arrays/stacks/queues that I use."
+          "Right now unfortunately all it handles is the basic operators * + - / ^, since it was more of a science project and I got the algorithm going, I don't have any plans at the moment to expand it to include more operators. You can find my code for the shunting yard algorithm ",
+          _react2["default"].createElement(
+            "a",
+            { href: "https://github.com/michaelAlvarino/malvarino.com/blob/master/src/dataStructures/trainShunting.js" },
+            "here"
+          ),
+          ".",
+          _react2["default"].createElement("br", null),
+          _react2["default"].createElement("br", null),
+          "If you look below I also display the intermediary arrays/stacks/queues that I use. In fact, on loading my javascript application I made the shunting yard object and associated functions available from the window object, so if you open the console and type trainShunting, you can go ahead and play with, or edit the object. Changes made to the global object won't be reflected in the calculator though."
         )
       );
     }
