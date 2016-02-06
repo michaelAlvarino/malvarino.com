@@ -1,0 +1,14 @@
+// main colors
+$font-color: #05213C;
+$background-color: #748FA9;
+$secondary-color: #153758;
+
+
+@import 'main';
+@import 'home';
+@import 'homeButton';
+@import 'resume';
+@import 'calculator/calculator';
+@import 'calculator/calculatorEnumerations';
+@import 'calculator/calculatorDescription';
+@import 'draggableGraph/draggableGraph';

@@ -6,19 +6,19 @@ import source from 'vinyl-source-stream';
 import babelify from 'babelify';
 import sass from 'gulp-sass';
 import image from 'gulp-image';
-import gulpCopy from 'gulp-copy';
 import config from './gulp-config';
+import rename from 'gulp-rename';
 
 // copy over favicon...
 gulp.task('ico', () => {
 	gulp.src(config.paths.ico)
-		.pipe(gulpCopy(config.paths.dist));
+		.pipe(gulp.dest(config.paths.dist + '/public'));
 });
 
 gulp.task('images', () => {
 	gulp.src(config.paths.img)
 		.pipe(image())
-		.pipe(gulp.dest(config.paths.dist));
+		.pipe(gulp.dest(config.paths.dist + '/public'));
 });
 
 gulp.task('js', () => {
@@ -27,11 +27,18 @@ gulp.task('js', () => {
 		.bundle()
 		.on('error', console.error.bind(console))
 		.pipe(source('bundle.js'))
-		.pipe(gulp.dest(config.paths.dist + '/scripts'));
+		.pipe(gulp.dest(config.paths.dist + '/public' + '/scripts'));
 });
 
+// can't get this task working for some reason
 gulp.task('server', () => {
-
+	browserify({entries: [config.paths.server]
+		, node: true})
+	.transform(babelify)
+	.bundle()
+	.on('error', console.error.bind(console))
+	.pipe(source('server.js'))
+	.pipe(gulp.dest(config.paths.dist + '/server'))
 })
 
 gulp.task('sass', () => {

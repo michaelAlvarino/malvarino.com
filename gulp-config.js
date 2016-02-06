@@ -1,16 +1,17 @@
 
-// 
+//
 const config = {
 	port: 3000,
 	devBaseUrl: 'http://localhost',
 	paths: {
 		html: './src/**/*.html',
 		dist: './dist',
-		mainJs: './src/router.js',
+		mainJs: './src/public/router.js',
 		sassSrc: './src/**/*.scss',
-		js: './src/**/*.js',
+		js: './src/public/**/*.js',
 		img: './src/img/*',
-		ico: './src/favicon.ico'
+		ico: './src/public/favicon.ico',
+		server: './src/server/server.js'
 	}
 
 }
