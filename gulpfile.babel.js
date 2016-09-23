@@ -31,7 +31,7 @@ gulp.task('js', () => {
 });
 
 // can't get this task working for some reason
-gulp.task('server', () => {
+/*gulp.task('server', () => {
 	browserify({entries: [config.paths.server]
 		, node: true})
 	.transform(babelify)
@@ -39,7 +39,7 @@ gulp.task('server', () => {
 	.on('error', console.error.bind(console))
 	.pipe(source('server.js'))
 	.pipe(gulp.dest(config.paths.dist + '/server'))
-})
+})*/
 
 gulp.task('sass', () => {
   gulp.src(config.paths.sassSrc)
@@ -52,6 +52,12 @@ gulp.task('html', () => {
 		.pipe(gulp.dest(config.paths.dist));
 });
 
+gulp.task('assets', () => {
+	console.log('moving files like: ' + config.paths.assetsSrc + ' to: ' + config.paths.dist + '/public/assets');
+	gulp.src(config.paths.assetsSrc)
+	.pipe(gulp.dest(config.paths.dist + '/public/assets'));
+})
+
 gulp.task('watch', () => {
 	gulp.watch(config.paths.sassSrc, ['sass']);
 	gulp.watch(config.paths.html, ['html']);
@@ -59,4 +65,4 @@ gulp.task('watch', () => {
 	gulp.watch(config.paths.img, ['images'])
 });
 
-gulp.task('default',['js', 'ico', 'html', 'sass', 'images', 'watch']);
+gulp.task('default',['js', 'ico', 'html', 'sass', 'images', 'assets', 'watch']);
