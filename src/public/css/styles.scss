@@ -1,14 +1,42 @@
 // main colors
-$font-color: #05213C;
-$background-color: #748FA9;
-$secondary-color: #153758;
+//$font-color: #05213C;
+//$background-color: #748FA9;
+//$secondary-color: #153758;
 
+$pretty-font-name: 'Poiret One', cursive;
+$pretty-font-size: 25px;
+$pretty-font-weight: 600;
 
-@import 'main';
-@import 'home';
-@import 'homeButton';
-@import 'resume';
-@import 'calculator/calculator';
-@import 'calculator/calculatorEnumerations';
-@import 'calculator/calculatorDescription';
-@import 'draggableGraph/draggableGraph';
+$readable-font-name: 'Josefin Sans', sans-serif;
+$readable-font-size: 20px;
+$readable-font-weight: 200;
+
+.home{
+	width: 70%;
+	margin: auto;
+	a{
+		text-decoration: none;
+		color: inherit;
+	}
+	p, h1, h2, h3, h4, h5, h6, li, .pretty{
+		font-family: $pretty-font-name;
+		font-size: $pretty-font-size;
+		font-weight: $pretty-font-weight;
+	}
+	.readable{
+		font-family: $readable-font-name;
+		font-size: $readable-font-size;
+		font-weight: $readable-font-weight;
+	}
+	ul{
+		list-style: none;
+	}
+}
+//@import 'main';
+//@import 'home';
+//@import 'homeButton';
+//@import 'resume';
+//@import 'calculator/calculator';
+//@import 'calculator/calculatorEnumerations';
+//@import 'calculator/calculatorDescription';
+//@import 'draggableGraph/draggableGraph';
