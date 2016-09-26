@@ -19595,5 +19595,7 @@ app.get('*', function (request, response){
 	response.sendFile(path.resolve('./dist/public/index.html'));
 })
 
-var server = app.listen(3000);
+// serve to web
+var server = app.listen(80);
+
 },{"express":19,"path":undefined}]},{},[69]);
