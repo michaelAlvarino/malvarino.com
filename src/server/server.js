@@ -13,4 +13,5 @@ app.get('*', function (request, response){
 	response.sendFile(path.resolve('./dist/public/index.html'));
 })
 
+// serve to web
 var server = app.listen(80);
