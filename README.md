@@ -8,4 +8,3 @@ There were some changes made recently to clean things up, but if you'd like to a
 
 * malvarino.com/Calculator
 * malvarino.com/DraggableGraph
-* malvarino.com/Resume
