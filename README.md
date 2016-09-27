@@ -1,4 +1,4 @@
-#H1 Welcome to my website!
+#Welcome to my website!
 
 This website is my first pet project. It uses a nodejs backend to serve html, javascript, css, and pdfs. The front-end is a reactjs client using redux and react-router bundled using gulp and browserify (some of these projects names may have changed).
 
